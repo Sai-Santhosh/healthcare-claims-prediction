@@ -1,0 +1,77 @@
+DIS_STAT|DIS_STAT_DESC
+|UNKNOWN
+00|UNKNOWN
+01|Home, self-care status
+02|Short term hospital
+03|SNF
+04|ICF. Eff 10/1/09: Custodial/Supportive Care
+05|Cancer/Children's Hospital
+06|Home health Service
+07|Against medical advice
+08|Reserved (Discontinued 7/13: Home IV service)
+09|Admitted as an Inpatient to this Hospital
+0E|UNKNOWN
+10|Reserved (Discontinued 7/13: Another Hospital-Neonate after care)
+11|UNKNOWN
+12|UNKNOWN
+13|Reserved (Discontinued 7/13: Another Hospital-Tertiary after care)
+14|UNKNOWN
+15|UNKNOWN
+16|UNKNOWN
+17|UNKNOWN
+18|UNKNOWN
+19|UNKNOWN
+20|Died
+21|Court/Law enforcement, eff 10/1/09
+22|Reserved (Discontinued 7/13: Neonate after care)
+23|Reserved (Discontinued 7/13: Tertiary after care)
+24|UNKNOWN
+25|UNKNOWN
+26|UNKNOWN
+30|Still a patient
+31|UNKNOWN
+33|UNKNOWN
+34|UNKNOWN
+36|UNKNOWN
+38|UNKNOWN
+39|UNKNOWN
+40|Hospice - Expired at Home
+41|Hospice - Expired in a Medical Facility
+42|Hospice - Expired - Place Unknown
+43|Federal Health Care Facility
+50|Hospice-home
+51|Hospice-medical facility
+52|UNKNOWN
+57|UNKNOWN
+60|UNKNOWN
+61|Swing bed
+62|Rehab facility/unit
+63|LTC hospital
+64|Nursing facility
+65|Psych hosp/unit
+66|Critical Access Hospital
+69|Designated Disaster Alternative Care Site
+70|Other institution
+71|OP services other facility, discontinued 4/03
+72|OP services this facility, discontinued 4/03
+73|UNKNOWN
+74|UNKNOWN
+80|UNKNOWN
+81|Home-Self care w Planned Readmission
+82|Short Term Hospital w Planned Readmission
+83|SNF w Planned Readmission
+84|Cust/supp care w Planned Readmission
+85|Canc/child hosp w Planned Readmission
+86|Home health Service w Planned Readmission
+87|Court/Law enforcement w Planned Readmission
+88|Federal health care facility w Planned Readmission
+89|Swing bed w Planned Readmission
+90|Rehab facility/unit w Planned Readmission
+91|LTC hospital w Planned Readmission
+92|Nursg Fac-Medicaid Cert w Planned Readmission
+93|Psych hosp/unit w Planned Readmission
+94|Critical Access Hospital w Planned Readmission
+95|Other institution w Planned Readmission
+97|UNKNOWN
+98|UNKNOWN
+99|UNKNOWN

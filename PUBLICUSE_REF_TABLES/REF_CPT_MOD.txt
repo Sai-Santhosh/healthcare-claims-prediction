@@ -1,0 +1,617 @@
+CPT_MOD|CPT_MOD_DESC
+0A|BRCA1 (Hereditary breat/Ovarian cancer)
+0B|BRCA2 (Hereditary breast cancer)
+0C|Neurofibromin (Neurofibromatosis, type 1)
+0D|Merlin (Neurofibromatosis, type 2)
+0E|c-RET (Multiple endrocrine neoplasia, types 2A/B, familial medullary thyroid carcinoma)
+0F|VHL (Von Hippel Lindau desease, renal carcinoma)
+0G|SDHD (Hereditary paraganglioma)
+0H|SDHB (Hereditary paraganglioma)
+0I|ERRB2, commonly called Her-2/neu
+0J|MLH1 (HNPCC, mismatch repair genes)
+0K|MSH2, MSH6, or PMS2 (HNPCC, mismatch repair genes)
+0L|APC (Hereditary polyposis coli)
+0M|Rb (Retinoblastoma)
+0N|TP53, commonly called p53
+0O|PTEN (Cowden's syndrome)
+0P|KIT, also called CD117 (gastrointestinal stromal tumor)
+0Z|Solid tumor gene, not otherwise specified
+1A|WT1 or WT2 (Wilm's tumor)
+1B|PAX3, PAX7, or FOX01A (Alveolar rhabdomyosarcoma)
+1C|FLI1, ERG, ETV1, or EWSR1 (Ewing's sarcoma, desmoplastic round cell)
+1D|DDIT3 or FUS (Myxoid liposarcoma)
+1E|NR4A3, RBF56, or TCF12 (Myxoid chondrosarcoma)
+1F|SSX1, SSX2, or SYT (Synovial sarcoma)
+1G|MYCN (Neuroblastoma)
+1H|COL1A1 or PDGFB (Dermato--fibrosarcoma protuberans)
+1I|TFE3 or ASPSCR1 (Alveolar soft parts sarcoma)
+1J|JAZF1 or JJAZ1 (Endometrial stromal sarcoma)
+1Z|Sarcoma gene, not otherwise specified
+21|Prolonged E&M Services
+22|Increased Procedural Services
+23|Unusual Anesthesia
+24|Unrelated E&M Service by the Same Physician During a Postoperative Period
+25|Significant, Separately Identifiable E&M Service by the Same Physician on the Same Day of a Procedure or Other Service
+26|Professional Component
+27|Multiple Outpatient Hospital E/M Encounters on the Same Date
+2A|RUNX1 or CBFA2T1, commonly called AML1 or ETO, genes associated with t(8;21) AML1 - also ETO (Acute myelogenous leukemia)
+2B|BCR or ABL1, genes associated with t(9;22) (Chronic myelogenous or acute leukemia) BCR - also ABL (Chronic myeloid, acute lymphoid leukemia)
+2C|PBX1 or TCF3, genes associated with t(1;19) (Acute lymphoblastic leukemia) CGF1
+2D|CBFB or MYH11, genes associated with inv 16 (Acute myelogenous leukemia) CBF beta (leukemia)
+2E|MLL (acute leukemia)
+2F|PML or RARA, genes associated with t(15;17) (Acute promyelocytic leukemia) PML/RAR alpha (Promyelocytic leukemia)
+2G|ETV6, commonly called TEL, gene associated with t(12;21) (acute leukemia) TEL (Leukemia)
+2H|BCL2 (B cell hymphoma, follicle center cell origin) bcl-2 (Lymphoma)
+2I|CCND1, commonly called BCL1, cyclin D1 (Mantle cell lymphoma, myeloma) bcl-1 (Lymphoma)
+2J|MYC (Burkitt lymphoma) c-myc (Lymphoma)
+2K|lgH (Lymphoma/leukemia)
+2L|IGK (Lymphoma/leukemia)
+2M|TRB, T cell receptor beta (Lymphoma/leukemia)
+2N|TRG, T cell recoptor gamma (Lymphoma/leukemia)
+2O|SIL or TAL1 (T cell leukemia)
+2Q|API1 or MALT1 (MALT lymphoma)
+2R|NPM or ALK, genes associated with t(2;5) (Anaplastic large cell lymphoma)
+2S|FLT3 (Acute myelogenous leukemia)
+2T|BCL6 (B cell lymphoma)
+2Z|Lymphoid/hematopoietic neoplasia, not otherwise specified
+32|Mandated Services
+33|Preventive Service
+3A|F5, commonly called Factor V (Leiden, others) (Hypercoagulable state)
+3B|FACC (Fanconi anemia)
+3C|FACD (Fanconi anemia)
+3D|HBB, beta globin (Thalassemia, Sickle cell anemia, other hemoglobinopathies)
+3E|HBA, commonly called alpha globin (Thalassemia)
+3F|MTHFR (Elevated homocystinemia)
+3G|F2, commonly called prothrombin (20210, others) (Hypercoagulable state) Prothrombin (Factor II, 20210A) (Hypercoagulable state)
+3H|F8, commonly called Factor VIII (Hemophilia A/VWF)
+3I|F9, commonly called Factor IX (Hemophilia B)
+3K|F13, commonly called Factor XIII (bleeding or hypercoagulable state) Beta globin
+3Z|Non-neoplastic hematology/coagulation, not otherwise specified
+47|Anesthesia by Surgeon
+4A|HLA-A
+4B|HLA-B
+4C|HLA-C
+4D|HLA-D
+4E|HLA-DRB all
+4F|HLA-DQB1
+4G|HLA-DPB1
+4H|Kell
+4I|Fingerprint for engraftment (post-allogeneic progenitor cell transplant)
+4J|Fingerprint for donor allelotype (allogeneic transplant)
+4K|Fingerprint for recipient allelotype (allogeneic transplant)
+4L|Fingerprint for leukocyte chimerism (allogeneic solid organ transplant)
+4M|Fingerprint for maternal versus fetal origin
+4N|Microsatellite instability
+4O|Microsatellite loss (loss of heterozygosity)
+4P|HLA-DRB1
+4Q|HLA-DRB3
+4R|HLA-DRB4
+4S|HLA-DRB5
+4T|HLA-DQA1
+4U|HLA-DPA1
+4Z|Histocompatibilty/blood typing, not otherwise specified
+50|Bilateral Procedure
+51|Multiple Procedures
+52|Reduced Services
+53|Discontinued Procedure
+54|Surgical Care Only
+55|Postoperative Management Only
+56|Preoperative Management Only
+57|Decision for Surgery
+58|Staged or Related Procedure or Service by the Same Physician During the Same Postoperative Period
+59|Distinct Procedural Service
+5A|ASPA, commonly called Aspartoacylase A (Canavan disease)
+5B|FMR-1 (Fragile X, FRAXA, syndrome)
+5C|FRDA, commonly called Frataxin (Freidreich ataxia)
+5D|HD, commonly called Huntington (Huntington's disease)
+5E|GABRA5, NIPA1, UBE3A, or ANCR GABRA (Prader Willi-Angelman syndrome)
+5F|GJB2, commonly called Connexin-26 (Hereditary hearing loss) Connexin-32 (GJB2) (Hereditary deafness)
+5G|GJB1, commonly called Connexin-32 (X-linked Charcot-Marie-Tooth disease)
+5H|SNRPN (Prader Willi-Angelman syndrome)
+5I|SCA1, commonly called Ataxin-1 (Spinocerebellar ataxia, type 1)
+5J|SCA2, commonly called Ataxin-2 (Spinocerebellar ataxia, type 2)
+5K|MJD, commonly called Ataxin-3 (Spinocerebellar ataxia, type 3, Machado-Joseph disease)
+5L|CACNA1A (Spinocerebellar ataxia, type 6)
+5M|ATXN7 Ataxin-7 (Spinocerebellar ataxia, type 7)
+5N|PMP-22 (Charcot-Marie-Tooth disease, type 1A)
+5O|MECP2 (Rett syndrome)
+5Z|Neurologic, non-neoplastic, not otherwise specified
+62|Two Surgeons
+63|Procedure Performed on Infants less than 4kg
+66|Surgical Team
+6A|DMD, commonly called dystrophin (Duchenne/Becker muscular dystrophy)
+6B|DMPK (Myotonic dystrophy, type 1)
+6C|ZNF-9 (Myotonic dystrophy, type 2)
+6D|SMN1/SMN2 (Autosomal recessive spinal muscular atrophy)
+6E|MTTK, commonly called tRNAlys (myotonic epilepsy, MERRF)
+6F|MTTL1, commonly called tRNAleu (mitochondrial encephalomyopathy, MELAS)
+6Z|Muscular, not otherwise specified
+73|Discontinued Out-Patient Hospital/Ambulatory Surgery Center (ASC) Procedure Prior to the Administration of Anesthesia
+74|Discontinued Out-Patient Hospital/Ambulatory Surgery Center (ASC) Procedure After Administration of Anesthesia
+76|Repeat Procedure or Service by Same Physician or Other Qualified Health Care Professional
+77|Repeat Procedure by Another Physician or Other Qualified Health Care Professional
+78|Unplanned Return to Operating/Procedure Room by the Same Physician or Other Qualified Health Care Professional Following Initial Procedure for a Related Procedure During Postoperative Period
+79|Unrelated Procedure or Service by the Same Physician During the Postoperative Period
+7A|APOE, commonly called apolipoprotein E (Cardiovascular disease or Alzheimer's disease)
+7B|NPC1 or NPC2, commonlyu called sphingomyelin phosphodeisterase (Neiman-Pick disease)
+7C|GBA, commonly called acid beta glucosidase (Gaucher disease)
+7D|HFE (Hemochromatosis)
+7E|HEXA, commonly called hexosaminidase A (Tay-Sachs disease)
+7F|ACADM (medium chain acyl CoA dehydrogenase deficiency)
+7Z|Metabolic, other, not otherwise specified
+80|Assistant Surgeon
+81|Minimum Assistant Surgeon
+82|Assistant Surgeon (when qualified resident surgeon not available)
+8A|CFTR (Cystic fibrosis)
+8B|PRSS1 (Hereditary pancreatitis)
+8C|Long QT syndrome, KCN (Jervell and Lange-Nielsen syndromes, types 1, 2, 5, and 6) and SCN (Brugada syndrome, SIDS and type 3)
+8Z|Metabolic, transport, not otherwise specified
+90|Reference (Outside) Laboratory
+91|Repeat Clinical Diagnostic Laboratory Test
+92|Alternative Laboratory Platform Testing
+99|Multiple Modifiers
+9A|TPMT, commonly called (thiopurine methyltransferase) (patients on antimetabolite therapy)
+9B|CYP2 genes, commonly called cytochrome p450 (drug metabolism)
+9C|ABCB1, commonly called MDR1 or p-glycoprotein (drug transport)
+9D|NAT2 (drug metabolism)
+9L|Metabolic-pharmacogenetics, not otherwise specified
+9M|FGFR1 (Pfeiffer and Kallman syndromes)
+9N|FGFR2 (Crouzon, Jackson-Weiss, Apert, Saethre-Chotzen syndromes)
+9O|FGFR3 (Achondroplasia, Hypochondroplasia, Thanatophoric dysplasia, type I and II, Crouzon syndrome with acanthosis nigricans, Muencke syndromes)
+9P|TWIST (Saethre-Chotzen syndrome)
+9Q|DGCR, commonly called CATCH-22 (DiGeorge and 22q11 deletion syndromes)
+9Z|Dysmorphology, not otherwise specified
+A1|DRESSING FOR ONE WOUND
+A2|DRESSING FOR TWO WOUNDS
+A3|DRESSING FOR THREE WOUNDS
+A4|DRESSING FOR FOUR WOUNDS
+A5|DRESSING FOR FIVE WOUNDS
+A6|DRESSING FOR SIX WOUNDS
+A7|DRESSING FOR SEVEN WOUNDS
+A8|DRESSING FOR EIGHT WOUNDS
+A9|DRESSING FOR 9 OR MORE WOUNDS
+AA|ANESTHESIA PERF BY ANESGST
+AD|MD SUPERVISION, >4 ANES PROC
+AE|REGISTERED DIETICIAN
+AF|SPECIALTY PHYSICIAN
+AG|PRIMARY PHYSICIAN
+AH|CLINICAL PSYCHOLOGIST
+AI|PRINCIPAL PHYSICIAN OF RECORD
+AJ|CLINICAL SOCIAL WORKER
+AK|NON PARTICIPATING PHYSICIAN
+AM|PHYSICIAN, TEAM MEMBER SERVICE
+AO|PROV DECLINED ALT PMT METHOD
+AP|NO DTMN OF REFRACTIVE STATE
+AQ|PHYSICIAN PROVIDING A SERVICE IN AN UNLISTED HEALTH PROFESSIONAL SHORTAGE AREA
+AR|PHYSICIAN SCARCITY AREA
+AS|ASSISTANT AT SURGERY SERVICE
+AT|ACUTE TREATMENT
+AU|URO, OSTOMY OR TRACH ITEM
+AV|ITEM W PROSTHETIC/ORTHOTIC
+AW|ITEM W A SURGICAL DRESSING
+AX|ITEM W DIALYSIS SERVICES
+AY|ITEM/SERVICE NOT FOR ESRD TREATMENT
+AZ|PHYSICIAN SERVICE IN DENTAL HPSA
+BA|ITEM W PEN SERVICES
+BL|SPECIAL ACQUISITION OF BLOOD AND BLOOD PRODUCTS
+BO|NUTRITION ORAL ADMIN NO TUBE
+BP|BENE ELECTED TO PURCHASE ITEM
+BR|BENE ELECTED TO RENT ITEM
+BU|BENE UNDECIDED ON PURCH/RENT
+CA|PROCEDURE PAYABLE INPATIENT
+CB|ESRD BENE PART A SNF-SEP PAY
+CC|PROCEDURE CODE CHANGE
+CD|AMCC TEST FOR ESRD OR MCP MD
+CE|MED NECES AMCC TST SEP REIMB
+CF|AMCC TST NOT COMPOSITE RATE
+CG|POLICY CRITERIA APPLIED
+CH|0 PERCENT IMPAIRED, LTD, RES
+CI|1 TO <20 PERCENT IMPAIRED
+CJ|20 TO <40 PERCENT IMPAIRED
+CK|40 TO <60 PERCENT IMPAIRED
+CL|60 TO <80 PERCENT IMPAIRED
+CM|80 TO <100 PERCENT IMPAIRED
+CN|100 PERCENT IMPAIRED, LTD
+CP|C-APC ADJUNCTIVE SERVICE
+CR|CATASTROPHE/DISASTER RELATED
+CS|GULF OIL 2010 SPILL RELATED
+CT|CT DOES NOT MEET NEMA STANDA
+DA|ORAL HEALTH ASSESS, NOT DENT
+DD|Diagnostic/therapeutic site other than P/H to another Diagnostic/therapeutic site other than P/H
+DE|Diagnostic/therapeutic site other than P/H to a Residential/Domiciliary/Custodial fac.
+DG|Diagnostic/therapeutic site other than P/H to a Hospital-based Dialysis Facility
+DH|Diagnostic/therapeutic site other than P/H to a Hospital
+DI|Diagnostic/therapeutic site other than P/H to a Site of ambulance transport modes transfer
+DJ|Diagnostic/therapeutic site other than P/H to a Non-Hospital-based Dialysis facility
+DN|Diagnostic/therapeutic site other than P/H to a Skilled Nursing Facility (SNF)
+DP|Diagnostic/therapeutic site other than P/H to a Physician's office
+DR|Diagnostic/therapeutic site other than P/H to a Residence
+DS|Diagnostic/therapeutic site other than P/H to a Scene of Accident/Acute Event
+DX|Diagnostic/therapeutic site other than P/H to an Intermediate Stop at Physician's Office
+E1|UPPER LEFT EYELID
+E2|LOWER LEFT EYELID
+E3|UPPER RIGHT EYELID
+E4|LOWER RIGHT EYELID
+EA|ERYTHROPOETIC STIMULATING AGENT (ESA), ANEMIA, CHEMO-INDUCED
+EB|ERYTHROPOETIC STIMULATING AGENT (ESA), ANEMIA, RADIO-INDUCED
+EC|ERYTHROPOETIC STIMULATING AGENT (ESA), ANEMIA, NON-CHEMO/RADIO
+ED|Residential/Domiciliary/Custodial fac. to a Diagnostic/therapeutic site other than P/H
+ED|HEMATOCRIT LEVEL HAS EXCEEDED 39% (OR HEMOGLOBIN LEVEL HAS EXCEEDED 13.0 G/DL) >=3 CYCLE
+EE|Residential/Domiciliary/Custodial fac. to another Residential/Domiciliary/Custodial fac.
+EE|HEMATOCRIT LEVEL HAS NOT EXCEEDED 39% (OR HEMOGLOBIN LEVEL HAS NOT EXCEEDED 13.0G/DL) < 3 CYCLE
+EG|Residential/Domiciliary/Custodial fac. to a Hospital-based Dialysis Facility
+EH|Residential/Domiciliary/Custodial fac. to a Hospital
+EI|Residential/Domiciliary/Custodial fac. to a Site of ambulance transport modes transfer
+EJ|Residential/Domiciliary/Custodial fac. to a Non-Hospital-based Dialysis facility
+EJ|SUBSEQUENT CLAIM
+EM|EMER RESERVE SUPPLY(ESRD)
+EN|Residential/Domiciliary/Custodial fac. to a Skilled Nursing Facility (SNF)
+EP|Residential/Domiciliary/Custodial fac. to a Physician's office
+EP|MEDICAID EPSDT PROGRAM SVC
+ER|Residential/Domiciliary/Custodial fac. to a Residence
+ES|Residential/Domiciliary/Custodial fac. to a Scene of Accident/Acute Event
+ET|EMERGENCY SERVICES
+EX|Residential/Domiciliary/Custodial fac. to an Intermediate Stop at Physician's Office
+EX|EXPATRIATE BENEFICIARY
+EY|NO MD ORDER FOR ITEM/SERVICE
+F1|LEFT HAND, SECOND DIGIT
+F2|LEFT HAND, THIRD DIGIT
+F3|LEFT HAND, FOURTH DIGIT
+F4|LEFT HAND, FIFTH DIGIT
+F5|RIGHT HAND, THUMB
+F6|RIGHT HAND, SECOND DIGIT
+F7|RIGHT HAND, THIRD DIGIT
+F8|RIGHT HAND, FOURTH DIGIT
+F9|RIGHT HAND, FIFTH DIGIT
+FA|LEFT HAND, THUMB
+FB|ITEM PROVIDED WITHOUT COST TO PROVIDER, SUPPLIER OR PRACTITIONER, OR FULL
+FC|PARTIAL CREDIT RECEIVED FOR REPLACED DEVICE
+FP|SVC PART OF FAMILY PLAN PGM
+G1|URR READING OF LESS THAN 60
+G2|URR READING OF 60 TO 64.9
+G3|URR READING OF 65 TO 69.9
+G4|URR READING OF 70 TO 74.9
+G5|URR READING OF 75 OR GREATER
+G6|ESRD PATIENT <6 DIALYSIS/MTH
+G7|PAYMENT LIMITS DO NOT APPLY
+G8|MONITORED ANESTHESIA CARE
+G9|MAC FOR AT RISK PATIENT
+GA|WAIVER OF LIABILITY ON FILE
+GB|CLAIM RESUBMITTED
+GC|RESIDENT/TEACHING PHYS SERV
+GD|Hospital-based Dialysis Facility to a Diagnostic/therapeutic site other than P/H
+GD|UNITS OF SERVICE EXCEEDS MEDICALLY UNLIKELY EDIT VALUE AND REPRESENTS
+GE|Hospital-based Dialysis Facility to a Residential/Domiciliary/Custodial fac.
+GE|RESIDENT PRIM CARE EXCEPTION
+GF|NONPHYSICIAN SERV C A HOSP
+GG|Hospital-based Dialysis Facility to another Hospital-based Dialysis Facility
+GG|PAYMENT SCREEN MAM + DIAGMAM
+GH|Hospital-based Dialysis Facility to a Hospital
+GH|DIAG MAMMO TO SCREENING MAMO
+GI|Hospital-based Dialysis Facility to a Site of ambulance transport modes transfer
+GJ|Hospital-based Dialysis Facility to a Non-Hospital-based Dialysis facility
+GJ|OPT OUT PROVIDER OF ER SRVC
+GK|ACTUAL ITEM/SERVICE ORDERED
+GL|UPGRADED ITEM, NO CHARGE
+GM|MULTIPLE TRANSPORTS
+GN|Hospital-based Dialysis Facility to a Skilled Nursing Facility (SNF)
+GN|OP SPEECH LANGUAGE SERVICE
+GO|OP OCCUPATIONAL THERAPY SERV
+GP|Hospital-based Dialysis Facility to a Physician's office
+GP|OP PT SERVICES
+GQ|TELEHEALTH STORE AND FORWARD
+GR|Hospital-based Dialysis Facility to a Residence
+GR|SERVICE BY VA RESIDENT
+GS|Hospital-based Dialysis Facility to a Scene of Accident/Acute Event
+GS|EPO/DARBEPOIETIN REDUCED 25%
+GT|INTERACTIVE TELECOMMUNICATION
+GU|LIABILITY WAIVER ROUT NOTICE
+GV|ATTENDING PHYS NOT HOSPICE
+GW|SERVICE UNRELATED TO TERM CO
+GX|Hospital-based Dialysis Facility to an Intermediate Stop at Physician's Office
+GX|VOLUNTARY LIABILITY NOTICE
+GY|STATUTORILY EXCLUDED
+GZ|NOT REASONABLE AND NECESSARY
+H9|COURT-ORDERED
+HA|CHILD/ADOLESCENT PROGRAM
+HB|ADULT PROGRAM NON-GERIATRIC
+HC|ADULT PROGRAM GERIATRIC
+HD|Hospital to a Diagnostic/therapeutic site other than P/H
+HD|PREGNANT/PARENTING PROGRAM
+HE|Hospital to a Residential/Domiciliary/Custodial fac.
+HE|MENTAL HEALTH PROGRAM
+HF|SUBSTANCE ABUSE PROGRAM
+HG|Hospital to a Hospital-based Dialysis Facility
+HG|OPIOID ADDICTION TX PROGRAM
+HH|Hospital to another Hospital
+HH|MENTAL HLTH/SUBSTANCE ABS PR
+HI|Hospital to a Site of ambulance transport modes transfer
+HI|MEN HLTH INTEL/DEV DISAB PGM
+HJ|Hospital to a Non-Hospital-based Dialysis facility
+HJ|EMPLOYEE ASSISTANCE PROGRAM
+HK|SPEC HIGH RSK MNTL HLTH POP P
+HL|INTERN
+HM|LESS THAN BACHELOR DEGREE LV
+HN|Hospital to a Skilled Nursing Facility (SNF)
+HN|BACHELORS DEGREE LEVEL
+HO|MASTERS DEGREE LEVEL
+HP|Hospital to a Physician's office
+HP|DOCTORAL LEVEL
+HQ|GROUP SETTING
+HR|Hospital to a Residence
+HR|FAMILY/COUPLE W CLIENT PRSNT
+HS|Hospital to a Scene of Accident/Acute Event
+HS|FAMILY/COUPLE W/O CLIENT PRSNT
+HT|MULTI-DISCIPLINARY TEAM
+HU|CHILD WELFARE AGENCY FUNDED
+HV|FUNDED STATE ADDICTION AGNCY
+HW|STATE MNTL HLTH AGNCY FUNDED
+HX|Hospital to an Intermediate Stop at Physician's Office
+HX|COUNTY/LOCAL AGENCY FUNDED
+HY|FUNDED BY JUVENILE JUSTICE
+HZ|CRIMINAL JUSTICE AGNCY FUND
+ID|Site of ambulance transport modes transfer to a Diagnostic/therapeutic site other than P/H
+IE|Site of ambulance transport modes transfer to a Residential/Domiciliary/Custodial fac.
+IG|Site of ambulance transport modes transfer to a Hospital-based Dialysis Facility
+IH|Site of ambulance transport modes transfer to a Hospital
+II|Site of ambulance transport modes transfer to another Site of ambulance transport modes transfer
+IJ|Site of ambulance transport modes transfer to a Non-Hospital-based Dialysis facility
+IN|Site of ambulance transport modes transfer to a Skilled Nursing Facility (SNF)
+IP|Site of ambulance transport modes transfer to a Physician's office
+IR|Site of ambulance transport modes transfer to a Residence
+IS|Site of ambulance transport modes transfer to a Scene of Accident/Acute Event
+IX|Site of ambulance transport modes transfer to an Intermediate Stop at Physician's Office
+J1|COMPETITIVE ACQUISITION PROGRAM NO-PAY SUBMISSION FOR A PRESCRIPTION NUMBER
+J2|COMPETITIVE ACQUISITION PROGRAM, RESTOCKING OF EMERGENCY DRUGS AFTER EMERGENCY
+J3|COMPETITIVE ACQUISITION PROGRAM (CAP), DRUG NOT AVAILABLE THROUGH CAP
+J4|DMEPOS COMP BID FURN BY HOSP
+JA|ADMINISTERED INTRAVENOUSLY
+JB|ADMINISTERED SUBCUTANEOUSLY
+JC|SKIN SUBSTITUTE USED AS A GRAFT
+JD|Non-Hospital-based Dialysis facility to a Diagnostic/therapeutic site other than P/H
+JD|SKIN SUBSTITUTE NOT USED AS A GRAFT
+JE|Non-Hospital-based Dialysis facility to a Residential/Domiciliary/Custodial fac.
+JE|ADMINISTERED VIA DIALYSATE
+JF|COMPOUNDED DRUG
+JG|Non-Hospital-based Dialysis facility to a Hospital-based Dialysis Facility
+JH|Non-Hospital-based Dialysis facility to a Hospital
+JI|Non-Hospital-based Dialysis facility to a Site of ambulance transport modes transfer
+JJ|Non-Hospital-based Dialysis facility to another Non-Hospital-based Dialysis facility
+JN|Non-Hospital-based Dialysis facility to a Skilled Nursing Facility (SNF)
+JP|Non-Hospital-based Dialysis facility to a Physician's office
+JR|Non-Hospital-based Dialysis facility to a Residence
+JS|Non-Hospital-based Dialysis facility to a Scene of Accident/Acute Event
+JW|DISCARDED DRUG NOT ADMINISTE
+JX|Non-Hospital-based Dialysis facility to an Intermediate Stop at Physician's Office
+K0|LWR EXT PROST FUNCTNL LVL 0
+K1|LWR EXT PROST FUNCTNL LVL 1
+K2|LWR EXT PROST FUNCTNL LVL 2
+K3|LWR EXT PROST FUNCTNL LVL 3
+K4|LWR EXT PROST FUNCTNL LVL 4
+KA|WHEELCHAIR ADD-ON OPTION/ACC
+KB|>4 MODIFIERS ON CLAIM
+KC|REPL SPECIAL PWR WC INTRFACE
+KD|DRUG/BIOLOGICAL DME INFUSED
+KE|BID UNDER ROUND ONE OF THE DMEPOS COMPETITIVE BIDDING PROGRAM FOR USE WITH
+KF|FDA CLASS III DEVICE
+KG|DMEPOS ITEM SUBJECT TO DMEPOS COMPETITIVE BIDDING PROGRAM NUMBER 1
+KH|DMEPOS INI CLM, PUR/1 MO RNT
+KI|DMEPOS 2ND OR 3RD MO RENTAL
+KJ|DMEPOS PEN PMP OR 4-15 MO RNT
+KK|DMEPOS ITEM SUBJECT TO DMEPOS COMPETITIVE BIDDING PROGRAM NUMBER 2
+KL|DMEPOS ITEM DELIVERED VIA MAIL
+KM|RPLC FACIAL PROSTH NEW IMP
+KN|RPLC FACIAL PROSTH OLD MOD
+KO|SINGLE DRUG UNIT DOSE FORM
+KP|FIRST DRUG OF MULTI DRUG U D
+KQ|2ND/SUBSQNT DRG MULTI DRG UD
+KR|RENTAL ITEM PARTIAL MONTH
+KS|GLUCOSE MONITOR SUPPLY
+KT|ITEM FROM NONCONTRACT SUPPLY
+KU|DMEPOS ITEM SUBJECT TO DMEPOS COMPETITIVE BIDDING PROGRAM NUMBER 3
+KV|DMEPOS ITEM, PROFESSION SERV
+KW|DMEPOS ITEM SUBJECT TO DMEPOS COMPETITIVE BIDDING PROGRAM NUMBER 4
+KX|DOCUMENTATION ON FILE
+KY|DMEPOS ITEM SUBJECT TO DMEPOS COMPETITIVE BIDDING PROGRAM NUMBER 5
+KZ|NEW COV NOT IMPLEMENT BY M+C
+L1|SEPARATELY PAYABLE LAB TEST
+LC|LFT CIRCUM CORONARY ARTERY
+LD|LEFT ANT DES CORONARY ARTERY
+LL|LEASE/RENTAL (APPLD TO PUR)
+LM|LEFT MAIN CORONARY ARTERY
+LR|LABORATORY ROUND TRIP
+LS|FDA-MONITORED IOL IMPLANT
+LT|LEFT SIDE
+M2|MEDICARE SECONDARY PAYER (MSP)
+MS|6-MO MAINT/SVC FEE PARTS/LBR
+NB|DRUG SPECIFIC NEBULIZER
+ND|Skilled Nursing Facility (SNF) to a Diagnostic/therapeutic site other than P/H
+NE|Skilled Nursing Facility (SNF) to a Residential/Domiciliary/Custodial fac.
+NG|Skilled Nursing Facility (SNF) to a Hospital-based Dialysis Facility
+NH|Skilled Nursing Facility (SNF) to a Hospital
+NI|Skilled Nursing Facility (SNF) to a Site of ambulance transport modes transfer
+NJ|Skilled Nursing Facility (SNF) to a Non-Hospital-based Dialysis facility
+NN|Skilled Nursing Facility (SNF) to another Skilled Nursing Facility (SNF)
+NP|Skilled Nursing Facility (SNF) to a Physician's office
+NR|Skilled Nursing Facility (SNF) to a Residence
+NR|NEW WHEN RENTED
+NS|Skilled Nursing Facility (SNF) to a Scene of Accident/Acute Event
+NU|NEW EQUIPMENT
+NX|Skilled Nursing Facility (SNF) to an Intermediate Stop at Physician's Office
+P1|A NORMAL HEALTHY PATIENT
+P2|A PATIENT WITH MILD SYSTEMIC DISEASE
+P3|A PATIENT WITH SEVERE SYSTEMIC DISEASE
+P4|A PATIENT WITH SEVERE SYSTEMIC DISEASE THAT IS A CONSTANT THREAT TO LIFE
+P5|A MORIBUND PATIENT WHO IS NOT EXPECTED TO SURVIVE WITHOUT THE OPERATION
+P6|A DECLARED BRAIN-DEAD PATIENT WHOSE ORGANS ARE BEING REMOVED FOR DONOR PURPOSES
+PA|SURGERY, WRONG BODY PART
+PB|SURGERY, WRONG PATIENT
+PC|WRONG SURGERY ON PATIENT
+PD|Physician's office to a Diagnostic/therapeutic site other than P/H
+PD|INP ADMIT W/IN 3 DAYS
+PE|Physician's office to a Residential/Domiciliary/Custodial fac.
+PG|Physician's office to a Hospital-based Dialysis Facility
+PH|Physician's office to a Hospital
+PI|Physician's office to a Site of ambulance transport modes transfer
+PI|PET TUMOR INIT TX STRAT
+PJ|Physician's office to a Non-Hospital-based Dialysis facility
+PL|PROGRESSIVE ADDITION LENSES
+PM|POST MORTEM
+PN|Physician's office to a Skilled Nursing Facility (SNF)
+PO|SERV/PROC OFF-CAMPUS PBD
+PP|Physician's office to another Physician's office
+PR|Physician's office to a Residence
+PS|Physician's office to a Scene of Accident/Acute Event
+PS|PET TUMOR SUBSQ TX STRATEGY
+PT|COLORECTAL CANCER SCREENING TEST, CONVERTED TO DIAGNOSTIC TEST OR OTHER PROCEDURE
+PX|Physician's office to an Intermediate Stop at Physician's Office
+Q0|INVESTIGATIONAL CLINICAL SERVICE PROVIDED IN A CLINICAL RESEARCH STUDY THAT IS
+Q1|ROUTINE CLINICAL SERVICE PROVIDED IN A CLINICAL RESEARCH STUDY THAT IS IN AN
+Q2|HCFA/ORD DEMO PROCEDURE/SVC
+Q3|LIVER DONOR SURGERY/SERVICES
+Q4|SVC EXEMPT-ORDRG/RFRNG MD
+Q5|SUBST MD SVC, RECIP BILL ARR
+Q6|LOCUM TENENS MD SERVICE
+Q7|ONE CLASS A FINDING
+Q8|TWO CLASS B FINDINGS
+Q9|1 CLASS B & 2 CLASS C FNDNGS
+QA|FDA INVESTIGATIONAL DEVICE
+QB|MD PRVDG SVC IN RURAL HPSA
+QC|SINGLE CHANNEL MONITORING
+QD|RCRDG/STRG IN SLD ST MEMORY
+QE|PRESCRIBED OXYGEN <1 LPM
+QF|PRSCRBD OXYGEN >4 LPM & PORT
+QG|PRESCRIBED OXYGEN >4 LPM
+QH|OXYGEN CNSRVG DVC W DEL SYS
+QJ|PATIENT IN STATE/LOCL CUSTOD
+QK|MED DIR 2-4 CNCRNT ANES PROC
+QL|PATIENT DIED AFTER AMB CALL
+QM|AMBULANCE ARR BY PROVIDER
+QN|AMBULANCE FURN BY PROVIDER
+QP|INDIVIDUALLY ORDERED LAB TST
+QQ|SOI SUBMITTED
+QR|ITEM OR SERVICE PROVIDED IN A MEDICARE SPECIFIED STUDY
+QS|MONITORED ANESTHESIA CARE
+QT|RCRDG/STRG TAPE ANALOG RECDR
+QU|MD PROVIDING SVC URBAN HPSA
+QV|ITEM OR SERVICE PROVIDED
+QW|CLIA WAIVED TEST
+QX|CRNA SVC W/ MD MED DIRECTION
+QY|MEDICALLY DIRECTED CRNA
+QZ|CRNA SVC W/O MED DIR BY MD
+RA|REPLACEMENT OF A DME ITEM
+RB|REPLACEMENT OF A PART OF DME FURNISHED AS PART OF A REPAIR
+RC|RIGHT CORONARY ARTERY
+RD|Residence to a Diagnostic/therapeutic site other than P/H
+RD|DRUG ADMIN NOT INCIDENT-TO
+RE|Residence to a Residential/Domiciliary/Custodial fac.
+RE|FURNISHED IN FULL COMPLIANCE WITH FDA-MANDATED RISK EVALUATION AND MITIGATION
+RG|Residence to a Hospital-based Dialysis Facility
+RH|Residence to a Hospital
+RI|Residence to a Site of ambulance transport modes transfer
+RI|RAMUS INTERMEDIUS CORONARY ARTERY
+RJ|Residence to a Non-Hospital-based Dialysis facility
+RN|Residence to a Skilled Nursing Facility (SNF)
+RP|Residence to a Physician's office
+RP|REPLACEMENT & REPAIR(DMEPOS)
+RR|Residence to another Residence
+RR|RENTAL(DME)
+RS|Residence to a Scene of Accident/Acute Event
+RT|RIGHT SIDE
+RX|Residence to an Intermediate Stop at Physician's Office
+SA|NURSE PRACTITIONER W PHYSICI
+SB|NURSE MIDWIFE
+SC|MEDICALLY NECESSARY SERV/SUP
+SD|Scene of Accident/Acute Event to a Diagnostic/therapeutic site other than P/H
+SD|SERV BY HOME INFUSION RN
+SE|Scene of Accident/Acute Event to a Residential/Domiciliary/Custodial fac.
+SE|STATE/FED FUNDED PROGRAM/SER
+SF|2ND OPINION ORDERED BY PRO
+SG|Scene of Accident/Acute Event to a Hospital-based Dialysis Facility
+SG|ASC FACILITY SERVICE
+SH|Scene of Accident/Acute Event to a Hospital
+SH|2ND CONCURRENT INFUSION THER
+SI|Scene of Accident/Acute Event to a Site of ambulance transport modes transfer
+SJ|Scene of Accident/Acute Event to a Non-Hospital-based Dialysis facility
+SJ|3RD CONCURRENT INFUSION THER
+SK|HIGH RISK POPULATION
+SL|STATE SUPPLIED VACCINE
+SM|SECOND OPINION
+SN|Scene of Accident/Acute Event to a Skilled Nursing Facility (SNF)
+SN|THIRD OPINION
+SP|Scene of Accident/Acute Event to a Physician's office
+SQ|ITEM ORDERED BY HOME HEALTH
+SR|Scene of Accident/Acute Event to a Residence
+SS|Scene of Accident/Acute Event to another Scene of Accident/Acute Event
+SS|HOME INFUSION SERVICES PROVIDED IN THE INFUSION SUITE OF THE IV THERAPY PROVIDER
+ST|RELATED TO TRAUMA OR INJURY
+SU|PERFORMED IN PHYS OFFICE
+SV|DRUGS DELIVERED NOT USED
+SW|SERV BY CERT DIAB EDUCATOR
+SX|Scene of Accident/Acute Event to an Intermediate Stop at Physician's Office
+SY|CONTACT W/HIGH-RISK POP
+SZ|HABILITATIVE SERVICES
+T1|LEFT FOOT, SECOND DIGIT
+T2|LEFT FOOT, THIRD DIGIT
+T3|LEFT FOOT, FOURTH DIGIT
+T4|LEFT FOOT, FIFTH DIGIT
+T5|RIGHT FOOT, GREAT TOE
+T6|RIGHT FOOT, SECOND DIGIT
+T7|RIGHT FOOT, THIRD DIGIT
+T8|RIGHT FOOT, FOURTH DIGIT
+T9|RIGHT FOOT, FIFTH DIGIT
+TA|LEFT FOOT, GREAT TOE
+TC|TECHNICAL COMPONENT
+TD|RN
+TE|LPN/LVN
+TF|INTERMEDIATE LEVEL OF CARE
+TG|COMPLEX/HIGH TECH LEVEL CARE
+TH|OB TX/SRVCS PRENATL/POSTPART
+TJ|CHILD/ADOLESCENT PROGRAM GP
+TK|EXTRA PATIENT OR PASSENGER
+TL|EARLY INTERVENTION IFSP
+TM|INDIVIDUALIZED ED PRGRM(IEP)
+TN|RURAL/OUT OF SERVICE AREA
+TP|MED TRANSPRT UNLOADED VEHICL
+TQ|BLS BY VOLUNTEER AMB PROVIDR
+TR|SCHOOL-BASED IEP OUT OF DIST
+TS|FOLLOW-UP SERVICE
+TT|ADDITIONAL PATIENT
+TU|OVERTIME PAYMENT RATE
+TV|HOLIDAY/WEEKEND PAYMENT RATE
+TW|BACK-UP EQUIPMENT
+U1|M/CAID CARE LEV 1 STATE DEF
+U2|M/CAID CARE LEV 2 STATE DEF
+U3|M/CAID CARE LEV 3 STATE DEF
+U4|M/CAID CARE LEV 4 STATE DEF
+U5|M/CAID CARE LEV 5 STATE DEF
+U6|M/CAID CARE LEV 6 STATE DEF
+U7|M/CAID CARE LEV 7 STATE DEF
+U8|M/CAID CARE LEV 8 STATE DEF
+U9|M/CAID CARE LEV 9 STATE DEF
+UA|M/CAID CARE LEV 10 STATE DEF
+UB|M/CAID CARE LEV 11 STATE DEF
+UC|M/CAID CARE LEV 12 STATE DEF
+UD|M/CAID CARE LEV 13 STATE DEF
+UE|USED DURABLE MED EQUIPMENT
+UF|SERVICES PROVIDED, MORNING
+UG|SERVICES PROVIDED, AFTERNOON
+UH|SERVICES PROVIDED, EVENING
+UJ|SERVICES PROVIDED, NIGHT
+UK|SVC ON BEHALF CLIENT-COLLAT
+UN|TWO PATIENTS SERVED
+UP|THREE PATIENTS SERVED
+UQ|FOUR PATIENTS SERVED
+UR|FIVE PATIENTS SERVED
+US|SIX OR MORE PATIENTS SERVED
+V5|VASCULAR CATHETER
+V6|ARTERIOVENOUS GRAFT
+V7|ARTERIOVENOUS FISTULA
+V8|INFECTION PRESENT
+V9|NO INFECTION PRESENT
+VP|APHAKIC PATIENT
+XE|SEPARATE ENCOUNTER
+XP|SEPARATE PRACTITIONER
+XS|SEPARATE ORGAN/STRUCTURE
+XU|UNUSUAL SEPARATE SERVICE
+ZA|NOVARTIS/SANDOZ

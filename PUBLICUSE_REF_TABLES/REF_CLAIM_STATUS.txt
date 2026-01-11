@@ -1,0 +1,19 @@
+CODE|VALUE
+01|Processed as primary
+02|Processed as secondary
+03|Processed as tertiary
+04|Denied
+19|Processed as primary, forwarded to additional payer(s)
+20|Processed as secondary,  forwarded to additional payer(s)
+21|Processed as tertiary, forwarded to additional payer(s)
+22|Reversal of previous payment
+1|Processed as primary
+2|Processed as secondary
+3|Processed as tertiary
+4|Denied
+06|Approved as amended
+6|Approved as amended
+26|Documentation Claim - No Payment Associated
+28|Repriced
+-1|Not specified (no claim status reported)
+-2|Not valid (invalid claim status code reported)

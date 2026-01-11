@@ -1,0 +1,52 @@
+UB_BILL_TYPE|UB_BILL_BILLCLASS_DESC|UB_BILL_FACTYPE_DESC
+11|Inpatient (Including Medicare Part A)|Hospital
+12|Inpatient (Medicare Part B only)|Hospital
+13|Outpatient|Hospital
+14|Laboratory Services Provided to Non-patients|Hospital
+15|Intermediate Care - Level I|Hospital
+16|Intermediate Care - Level II|Hospital
+18|Swing Beds|Hospital
+21|Inpatient (Including Medicare Part A)|Skilled Nursing
+22|Inpatient (Medicare Part B only)|Skilled Nursing
+23|Outpatient|Skilled Nursing
+24|Laboratory Services Provided to Non-patients|Skilled Nursing
+25|Intermediate Care - Level I|Skilled Nursing
+26|Intermediate Care - Level II|Skilled Nursing
+28|Swing Beds|Skilled Nursing
+31|Inpatient (Including Medicare Part A)|Home Health
+32|Services Under A Plan Of Treatment|Home Health
+33|Outpatient (Medicare Part A, including DME); Discontinued 10/13|Home Health
+34|Services not under a plan of treatment|Home Health
+35|Intermediate Care - Level I|Home Health
+36|Intermediate Care - Level II|Home Health
+38|Swing Beds|Home Health
+41|Hospital Inpatient|Religious Non-Medical Health Care Institutions
+42|Inpatient (Medicare Part B only)|Religious Non-Medical Health Care Institutions - Hospital Inpatient
+43|Outpatient Services|Religious Non-Medical Health Care Institutions
+44|Laboratory Services Provided to Non-patients|Religious Non-Medical Health Care Institutions - Hospital Inpatient
+45|Intermediate Care - Level I|Religious Non-Medical Health Care Institutions - Hospital Inpatient
+46|Intermediate Care - Level II|Religious Non-Medical Health Care Institutions - Hospital Inpatient
+48|Swing Beds|Religious Non-Medical Health Care Institutions - Hospital Inpatient
+61|Inpatient (Including Medicare Part A)|Intermediate Care
+62|Inpatient (Medicare Part B only)|Intermediate Care
+63|Outpatient|Intermediate Care
+64|Laboratory Services Provided to Non-patients|Intermediate Care
+65|Intermediate Care - Level I|Intermediate Care
+66|Intermediate Care - Level II|Intermediate Care
+68|Swing Beds|Intermediate Care
+71|Rural Health|Clinic
+72|Hospital Based or Independent Renal Dialysis Center|Clinic
+73|Free Standing|Clinic
+74|Outpatient Rehabilitation Facility|Clinic
+75|Comprehensive Outpatient Rehabilitation Facility|Clinic
+76|Community Mental Health Center|Clinic
+77|Federally Qualified Health Center (FQHC)|Clinic
+78|Licensed Freestanding Emergency Medical Facility|Clinic
+79|Other|Clinic
+81|Hospice (non-hospital based)|Special Facility
+82|Hospice (hospital based)|Special Facility
+83|Ambulatory Surgery Center|Special Facility
+84|Free Standing Birthing Center|Special Facility
+85|Critical Access Hospital|Special Facility
+86|Residential Facility|Special Facility
+89|Other|Special Facility

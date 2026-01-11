@@ -1,0 +1,16 @@
+ADM_SRC|ADM_SRC_DESC|ADM_SRC_NEWBORN_DESC
+1|Non-Health Care Facility (eff 7/1/10)|Reserved (Normal Delivery Discontinued 10/1/07)
+2|Clinic or Physician Office (eff 7/1/10)|Reserved (Premature Delivery Discontinued 10/1/07)
+3|Reserved (HMO Referral Discontinued 10/1/07)|Reserved (Sick Baby Discontinued 10/1/07)
+4|Transfer from Hospital, Different Facility|Reserved (Extramural Birth Discontinued 10/1/07)
+5|Transfer from Skilled Nursing Facility, Intermediate Care Facility, or Assisted Living Facility|Born Inside this Hospital
+6|Transfer from Another Health Care Facility|Born Outside of this Hospital
+7|Reserved (Emergency Room Discontinued 7/1/10)|Reserved
+8|Court/Law Enforcement|Reserved
+9|Information Not Available|Information Not Available
+A|Reserved (Transfer from CAH Discontinued 10/1/07)|
+B|Reserved (Transfer from Another Home Health Agency - Discontinued)|
+C|Reserved (Readmission to Same Home Health Agency. Discontinued 7/1/10)|
+D|Transfer from Hospital Inpatient, Same Facility|
+E|Transfer from Ambulatory Surgery Center|
+F|Transfer from a Hospice Facility|

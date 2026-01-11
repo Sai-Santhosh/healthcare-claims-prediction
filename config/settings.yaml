@@ -1,0 +1,181 @@
+# =============================================================================
+# Medical Claims Prediction - Configuration Settings
+# =============================================================================
+
+project:
+  name: "Medical Claims Paid Amount Prediction"
+  version: "1.0.0"
+  description: "Production ML pipeline for predicting paid amounts for medical claims"
+
+# -----------------------------------------------------------------------------
+# Data Settings
+# -----------------------------------------------------------------------------
+data:
+  raw_data_file: "PUBLICUSE_CLAIM_MC_2016.txt"
+  delimiter: "|"
+  total_rows: 16982295
+  chunk_size: 100000
+  sample_size: 1000000
+  random_seed: 42
+  
+  # Column configurations
+  target_column: "AMT_PAID"
+  id_column: "CLAIM_ID_KEY"
+  
+  # Columns to drop in initial cleaning
+  high_missing_threshold: 1000000
+  
+  columns_to_remove:
+    - "FROM_YEAR"
+    - "ADM_YR"
+    - "DIS_YR"
+    - "SERVICES_KEY"
+    - "SV_LINE"
+    - "MEMBER_STATE"
+    - "INSURANCE_TYPE"
+    - "CPT_MOD1"
+    - "CPT_MOD2"
+    - "ICD_10_OR_HIGHER"
+    - "QTY"
+    - "AMT_COPAY"
+    - "AMT_PREPAID"
+    - "INPATIENT_FLAG"
+    - "UTILS"
+    - "CLAIM_STATUS_ORIG"
+    - "ADMIT_HOUR"
+    - "DISCHARGE_HOUR"
+    - "CLAIM_ADJUSTMENT_LOGIC"
+    - "IMPUTED_SERVICE_KEY"
+  
+  final_columns_to_drop:
+    - "CLAIM_ID_KEY"
+    - "MEMBER_COUNTY"
+    - "SERV_PROV_CW_KEY"
+    - "MR_LINE_CASE_KEY"
+    - "Proc_Code_letters"
+    - "COVERAGE_CLASS"
+    - "LOB"
+    - "POS"
+    - "BILL_PROV_CW_KEY"
+    - "CS_CLAIM_ID_KEY"
+    - "ICD_DIAG_02"
+
+  # Categorical columns for encoding
+  categorical_columns:
+    - "FORM_TYPE"
+    - "SV_STAT"
+    - "PRODUCT_TYPE"
+    - "ICD_DIAG_01_PRIMARY_categories"
+
+  # Numerical columns for standardization
+  numerical_columns:
+    - "CLIENT_LOS"
+    - "AMT_BILLED"
+    - "AMT_PAID"
+    - "AMT_DEDUCT"
+    - "AMT_COINS"
+    - "Num_diag"
+    - "Age"
+
+# -----------------------------------------------------------------------------
+# AWS Settings
+# -----------------------------------------------------------------------------
+aws:
+  region: "us-east-1"
+  
+  s3:
+    bucket_name: "medical-claims-ml-pipeline"
+    raw_data_prefix: "raw/"
+    processed_data_prefix: "processed/"
+    models_prefix: "models/"
+    artifacts_prefix: "artifacts/"
+  
+  redshift:
+    cluster_identifier: "claims-analytics-cluster"
+    database: "claims_db"
+    schema: "public"
+    port: 5439
+  
+  glue:
+    database: "claims_database"
+    crawler_name: "claims-data-crawler"
+    job_name: "claims-etl-job"
+  
+  lambda:
+    function_name: "claims-prediction-inference"
+    timeout: 300
+    memory_size: 1024
+
+# -----------------------------------------------------------------------------
+# Model Settings
+# -----------------------------------------------------------------------------
+model:
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+  
+  # Lasso
+  lasso:
+    alpha: 0.1
+    max_iter: 1000
+  
+  # Ridge
+  ridge:
+    alpha: 0.5
+    max_iter: 1000
+  
+  # Random Forest
+  random_forest:
+    n_estimators: 300
+    max_depth: 30
+    max_features: "sqrt"
+    n_jobs: -1
+    random_state: 42
+  
+  # MARS (Earth)
+  mars:
+    max_degree: 3
+    thresh: 0.01
+    smooth: true
+  
+  # AdaBoost
+  adaboost:
+    n_estimators: 200
+    learning_rate: 1.0
+  
+  # XGBoost
+  xgboost:
+    n_estimators: 300
+    max_depth: 6
+    learning_rate: 0.1
+    subsample: 0.8
+    colsample_bytree: 0.8
+  
+  # LightGBM
+  lightgbm:
+    n_estimators: 300
+    max_depth: -1
+    learning_rate: 0.1
+    num_leaves: 31
+
+# -----------------------------------------------------------------------------
+# Paths
+# -----------------------------------------------------------------------------
+paths:
+  data_dir: "data"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  interim_dir: "data/interim"
+  external_dir: "data/external"
+  models_dir: "models"
+  logs_dir: "logs"
+  reports_dir: "reports"
+  figures_dir: "reports/figures"
+
+# -----------------------------------------------------------------------------
+# Logging
+# -----------------------------------------------------------------------------
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/pipeline.log"

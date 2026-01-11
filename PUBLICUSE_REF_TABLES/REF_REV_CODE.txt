@@ -1,0 +1,553 @@
+REV_CODE|REV_DESC_MAJ
+0001|Total Charge
+0022|SNF claim paid under PPS
+0023|Home Health claim paid under PPS
+0024|Inpatient Rehabilitation Facility paid under PPS
+0100|All inclusive rate-room and board plus ancillary
+0101|All inclusive rate-room and board
+0110|Private medical or general-general classification
+0111|Private medical or general-medical/surgical/GYN
+0112|Private medical or general-OB
+0113|Private medical or general-pediatric
+0114|Private medical or general-psychiatric
+0115|Private medical or general-hospice
+0116|Private medical or general-detoxification
+0117|Private medical or general-oncology
+0118|Private medical or general-rehabilitation
+0119|Private medical or general-other
+0120|Semi-private 2 bed (medical or general)-general classification
+0121|Semi-private 2 bed (medical or general)-medical/surgical/GYN
+0122|Semi-private 2 bed (medical or general)-OB
+0123|Semi-private 2 bed (medical or general)-pediatric
+0124|Semi-private 2 bed (medical or general)-psychiatric
+0125|Semi-private 2 bed (medical or general)-hospice
+0126|Semi-private 2 bed (medical or general)-detoxification
+0127|Semi-private 2 bed (medical or general)-oncology
+0128|Semi-private 2 bed (medical or general)-rehabilitation
+0129|Semi-private 2 bed (medical or general)-other
+0130|Semi-private 3 and 4 beds-general classification
+0131|Semi-private 3 and 4 beds-medical/surgical/GYN
+0132|Semi-private 3 and 4 beds-OB
+0133|Semi-private 3 and 4 beds-pediatric
+0134|Semi-private 3 and 4 beds-psychiatric
+0135|Semi-private 3 and 4 beds-hospice
+0136|Semi-private 3 and 4 beds-detoxification
+0137|Semi-private 3 and 4 beds-oncology
+0138|Semi_private 3 and 4 beds-rehabilitation
+0139|Semi-private 3 and 4 beds-other
+0140|Private (deluxe)-general classification
+0141|Private (deluxe)-medical/surgical/GYN
+0142|Private (deluxe)-OB
+0143|Private (deluxe)-pediatric
+0144|Private (deluxe)-psychiatric
+0145|Private (deluxe)-hospice
+0146|Private (deluxe)-detoxification
+0147|Private (deluxe)-oncology
+0148|Private (deluxe)-rehabilitation
+0149|Private (deluxe)-other
+0150|Room&Board ward (medical or general)-general classification
+0151|Room&Board ward (medical or general)-medical/surgical/GYN
+0152|Room&Board ward (medical or general)-OB
+0153|Room&Board ward (medical or general)-pediatric
+0154|Room&Board ward (medical or general)-psychiatric
+0155|Room&Board ward (medical or general)-hospice
+0156|Room&Board ward (medical or general)-detoxification
+0157|Room&Board ward (medical or general)-oncology
+0158|Room&Board ward (medical or general)-rehabilitation
+0159|Room&Board ward (medical or general)-other
+0160|Other Room&Board-general classification
+0161|Other Room&Board-SNF (Medicaid)
+0162|Other Room&Board-ICF (Medicaid)
+0164|Other Room&Board-sterile environment
+0166|Other Room&Board-Admin Days
+0167|Other Room&Board-self care
+0168|Other Room&Board-Chem Using Preg Women
+0169|Other Room&Board-other
+0170|Nursery-general classification
+0171|Nursery-newborn-level I (routine)
+0172|Nursery-premature-newborn-level II (continuing care)
+0173|Nursery-newborn-level III (intermediate care)-(eff 10/96)
+0174|Nursery-newborn-level IV (intensive care)-(eff 10/96)
+0175|Nursery-neonatal ICU (obsolete eff 10/96)
+0179|Nursery-other
+0180|Leave of absence-general classification
+0182|Leave of absence-patient convenience charges-billable
+0183|Leave of absence-therapeutic leave
+0184|Leave of absence-ICF mentally retarded-any reason
+0185|Leave of absence-nursing home (hospitalization)
+0189|Leave of absence-other leave of absence
+0190|Subacute care - general classification-(eff. 10/97)
+0191|Subacute care - level I (eff. 10/97)
+0192|Subacute care - level II (eff. 10/97)
+0193|Subacute care - level III (eff. 10/97)
+0194|Subacute care - level IV (eff. 10/97)
+0199|Subacute care - other (eff 10/97)
+0200|Intensive care-general classification
+0201|Intensive care-surgical
+0202|Intensive care-medical
+0203|Intensive care-pediatric
+0204|Intensive care-psychiatric
+0206|Intensive care-post ICU; redefined as-intermediate ICU (eff 10/96)
+0207|Intensive care-burn care
+0208|Intensive care-trauma
+0209|Intensive care-other intensive care
+0210|Coronary care-general classification
+0211|Coronary care-myocardial infraction
+0212|Coronary care-pulmonary care
+0213|Coronary care-heart transplant
+0214|Coronary care-post CCU; redefined as-intermediate CCU (eff 10/96)
+0219|Coronary care-other coronary care
+0220|Special charges-general classification
+0221|Special charges-admission charge
+0222|Special charges-technical support charge
+0223|Special charges-UR service charge
+0224|Special charges-late discharge, medically-necessary
+0229|Special charges-other special charges
+0230|Incremental nursing charge rate-general-classification
+0231|Incremental nursing charge rate-nursery
+0232|Incremental nursing charge rate-OB
+0233|Incremental nursing charge rate-ICU (include-transitional care)
+0234|Incremental nursing charge rate-CCU (include-transitional care)
+0235|Incremental nursing charge rate-hospice
+0239|Incremental nursing charge rate-other
+0240|All inclusive ancillary-general classification
+0241|All inclusive ancillary-basic
+0242|All inclusive ancillary-comprehensive
+0243|All inclusive ancillary-specialty
+0249|All inclusive ancillary-other inclusive ancillary
+0250|Pharmacy-general classification
+0251|Pharmacy-generic drugs
+0252|Pharmacy-non-generic drugs
+0253|Pharmacy-take home drugs
+0254|Pharmacy-drugs incident to other diagnostic service--subject to payment limit
+0255|Pharmacy-drugs incident to radiology--subject to payment limit
+0256|Pharmacy-experimental drugs
+0257|Pharmacy-non-prescription
+0258|Pharmacy-IV solutions
+0259|Pharmacy-other pharmacy
+0260|IV therapy-general classification
+0261|IV therapy-infusion pump
+0262|IV therapy-pharmacy services (eff 10/94)
+0263|IV therapy-drug supply/delivery (eff 10/94)
+0264|IV therapy-supplies (eff 10/94)
+0269|IV therapy-other IV therapy
+0270|Medical/surgical supplies-general classification-(also see 062X)
+0271|Medical/surgical supplies-non sterile supply
+0272|Medical/surgical supplies-sterile supply
+0273|Medical/surgical supplies-take home supplies
+0274|Medical/surgical supplies-prosthetic/orthotic-devices
+0275|Medical/surgical supplies-pace maker
+0276|Medical/surgical supplies-intraocular lens
+0277|Medical/surgical supplies-oxygen-take home
+0278|Medical/surgical supplies-other implants
+0279|Medical/surgical supplies-other devices
+0280|Oncology-general classification
+0289|Oncology-other oncology
+0290|DME (other than renal)-general classification
+0291|DME (other than renal)-rental
+0292|DME (other than renal)-purchase of new DME
+0293|DME (other than renal)-purchase of used DME
+0294|DME (other than renal)-Supplies/Drugs for DME Effectiveness (HHA's only)
+0299|DME (other than renal)-other
+0300|Laboratory-general classification
+0301|Laboratory-chemistry
+0302|Laboratory-immunology
+0303|Laboratory-renal patient (home)
+0304|Laboratory-non-routine dialysis
+0305|Laboratory-hematology
+0306|Laboratory-bacteriology & microbiology
+0307|Laboratory-urology
+0309|Laboratory-other laboratory
+0310|Laboratory pathological-general classification
+0311|Laboratory pathological-cytology
+0312|Laboratory pathological-histology
+0314|Laboratory pathological-biopsy
+0319|Laboratory pathological-other
+0320|Radiology diagnostic-general classification
+0321|Radiology diagnostic-angiocardiography
+0322|Radiology diagnostic-arthrography
+0323|Radiology diagnostic-arteriography
+0324|Radiology diagnostic-chest X-ray
+0329|Radiology diagnostic-other
+0330|Radiology therapeutic-general classification
+0331|Radiology therapeutic-chemotherapy injected
+0332|Radiology therapeutic-chemotherapy oral
+0333|Radiology therapeutic-radiation therapy
+0335|Radiology therapeutic-chemotherapy IV
+0339|Radiology therapeutic-other
+0340|Nuclear medicine-general classification
+0341|Nuclear medicine-diagnostic procedures
+0342|Nuclear medicine-therapeutic procedures
+0343|Nuclear medicine-Diagnostic Radiopharmaceuticals (Eff 10/1/04)
+0344|Nuclear medicine-Therapeutic Radiopharmaceuticals (Eff 10/1/04)
+0349|Nuclear medicine-other
+0350|Computed tomographic (CT) scan-general-classification
+0351|CT scan-head scan
+0352|CT scan-body scan
+0359|CT scan-other CT scans
+0360|Operating room services-general classification
+0361|Operating room services-minor surgery
+0362|Operating room services-organ transplant,-other than kidney
+0367|Operating room services-kidney transplant
+0369|Operating room services-other operating room-services
+0370|Anesthesia-general classification
+0371|Anesthesia-incident to RAD and-subject to the payment limit
+0372|Anesthesia-incident to other diagnostic service-and subject to the payment limit
+0374|Anesthesia-acupuncture
+0379|Anesthesia-other anesthesia
+0380|Blood-general classification
+0381|Blood-packed red cells
+0382|Blood-whole blood
+0383|Blood-plasma
+0384|Blood-platelets
+0385|Blood-leukocytes
+0386|Blood-other components
+0387|Blood-other derivatives (cryopricipatates)
+0389|Blood-other blood
+0390|Blood storage and processing-general-classification
+0391|Blood storage and processing-blood-administration
+0392|Blood Processing and Storage
+0399|Blood storage and processing-other
+0400|Other imaging services-general classification
+0401|Other imaging services-diagnostic mammography
+0402|Other imaging services-ultrasound
+0403|Other imaging services-screening mammography-(eff 1/1/91)
+0404|Other imaging services-positron emission-tomography (eff 10/94)
+0409|Other imaging services-other
+0410|Respiratory services-general classification
+0412|Respiratory services-inhalation services
+0413|Respiratory services-hyperbaric oxygen therapy
+0419|Respiratory services-other
+0420|Physical therapy-general classification
+0421|Physical therapy-visit charge
+0422|Physical therapy-hourly charge
+0423|Physical therapy-group rate
+0424|Physical therapy-evaluation or re-evaluation
+0429|Physical therapy-other
+0430|Occupational therapy-general classification
+0431|Occupational therapy-visit charge
+0432|Occupational therapy-hourly charge
+0433|Occupational therapy-group rate
+0434|Occupational therapy-evaluation or re-evaluation
+0439|Occupational therapy-other (may include-restorative therapy)
+0440|Speech language pathology-general classification
+0441|Speech language pathology-visit charge
+0442|Speech language pathology-hourly charge
+0443|Speech language pathology-group rate
+0444|Speech language pathology-evaluation or-re-evaluation
+0449|Speech language pathology-other
+0450|Emergency room-general classification
+0451|Emergency room-emtala emergency medical screening-services (eff 10/96)
+0452|Emergency room-ER beyond emtala screening-(eff 10/96)
+0456|Emergency room-urgent care (eff 10/96)
+0459|Emergency room-other
+0460|Pulmonary function-general classification
+0469|Pulmonary function-other
+0470|Audiology-general classification
+0471|Audiology-diagnostic
+0472|Audiology-treatment
+0479|Audiology-other
+0480|Cardiology-general classification
+0481|Cardiology-cardiac cath lab
+0482|Cardiology-stress test
+0483|Cardiology-Echocardiology
+0489|Cardiology-other
+0490|Ambulatory surgical care-general classification
+0499|Ambulatory surgical care-other
+0500|Outpatient services-general classification-(deleted 9/93)
+0509|Outpatient services-other (deleted 9/93)
+0510|Clinic-general classification
+0511|Clinic-chronic pain center
+0512|Clinic-dental center
+0513|Clinic-psychiatric
+0514|Clinic-OB-GYN
+0515|Clinic-pediatric
+0516|Clinic-urgent care clinic (eff 10/96)
+0517|Clinic-family practice clinic (eff 10/96)
+0519|Clinic-other
+0520|Free-standing clinic-general classification
+0521|Free-standing clinic-rural health clinic
+0522|Free-standing clinic-rural health home
+0523|Free-standing clinic-family practice
+0524|Visit by practitioner to Family Clinic
+0525|Visit by practitioner to SNF, NF, ICF or Other Facility
+0526|Free-standing clinic-urgent care (eff 10/96)
+0527|Visiting Nurse Services to Home
+0528|Visit by practitioner to Other Site (e.g., Scene of Accident)
+0529|Free-standing clinic-other
+0530|Osteopathic services-general classification
+0531|Osteopathic services-osteopathic therapy
+0539|Osteopathic services-other
+0540|Ambulance-general classification
+0541|Ambulance-supplies
+0542|Ambulance-medical transport
+0543|Ambulance-heart mobile
+0544|Ambulance-oxygen
+0545|Ambulance-air ambulance
+0546|Ambulance-neo-natal ambulance
+0547|Ambulance-pharmacy
+0548|Ambulance-telephone transmission EKG
+0549|Ambulance-other
+0550|Skilled nursing-general classification
+0551|Skilled nursing-visit charge
+0552|Skilled nursing-hourly charge
+0559|Skilled nursing-other
+0560|Medical social services-general classification
+0561|Medical social services-visit charge
+0562|Medical social services-hourly charges
+0569|Medical social services-other
+0570|Home health aid (home health)-general-classification
+0571|Home health aid (home health)-visit charge
+0572|Home health aid (home health)-hourly charge
+0579|Home health aid (home health)-other
+0580|Other visits (home health)-general-classification (under HHPPS, not allowed
+0581|Other visits (home health)-visit charge-(under HHPPS, not allowed as covered charges)
+0582|Other visits (home health)-hourly charge-(under HHPPS, not allowed as covered charges)
+0583|Other visits (home health)-Assessment
+0589|Other visits (home health)-other-(under HHPPS, not allowed as covered charges)
+0590|Units of service (home health)-general-classification (under HHPPS, not allowed
+0599|Units of service (home health)-other
+0600|Oxygen-general classification
+0601|Oxygen-stat or port equip/supply or count
+0602|Oxygen-stat/equip/under 1 LPM
+0603|Oxygen-stat/equip/over 4 LPM
+0604|Oxygen-stat/equip/portable add-on
+0609|Other oxygen
+0610|Magnetic resonance imaging (MRI) and Magnetic Resonance Anigiography (MRA)-general-classification
+0611|MRI-brain (including brainstem)
+0612|MRI-spinal cord (including spine)
+0614|MRI-other
+0615|MRA-Head and Neck
+0616|MRA-Lower Extremities
+0618|MRA-other
+0619|MRI-other
+0621|Medical/surgical supplies-incident to radiology--subject to the payment limit - extension of 027X
+0622|Medical/surgical supplies-incident to other-diagnostic service-subject to the payment limit -
+0623|Medical/surgical supplies-surgical dressings-(eff 1/95) - extension of 027X
+0624|Medical/surgical supplies-medical investigational-devices and procedures with FDA approved IDE's
+0630|Drugs requiring specific identification-general classification
+0631|Drugs requiring specific identification-single drug-source (eff 9/93)
+0632|Drugs requiring specific identification-multiple drug-source (eff 9/93)
+0633|Drugs requiring specific identification-restrictive-prescription (eff 9/93)
+0634|Drugs requiring specific identification-EPO under-10,000 units
+0635|Drugs requiring specific identification-EPO 10,000-units or more
+0636|Drugs requiring specific identification-detailed-coding (eff 3/92)
+0637|Self-administered drugs administered in an-emergency situation - not requiring detailed
+0640|Home IV therapy-general classification-(eff 10/94)
+0641|Home IV therapy-nonroutine nursing-(eff 10/94)
+0642|Home IV therapy-IV site care, central line-(eff 10/94)
+0643|Home IV therapy-IV start/change peripheral line-(eff 10/94)
+0644|Home IV therapy-nonroutine nursing, peripheral line-(eff 10/94)
+0645|Home IV therapy-train patient/caregiver, central-line (eff 10/94)
+0646|Home IV therapy-train disabled patient, central-line (eff 10/94)
+0647|Home IV therapy-train patient/caregiver, peripheral-line (eff 10/94)
+0648|Home IV therapy-train disabled patient, peripheral-line (eff 10/94)
+0649|Home IV therapy-other IV therapy services-(eff 10/94)
+0650|Hospice services-general classification
+0651|Hospice services-routine home care
+0652|Hospice services-continuous home care
+0653|Hospice services-continuous home care-16-20 hrs
+0654|Hospice services-continuous home care->20 hrs
+0655|Hospice services-inpatient respite care
+0656|Hospice services-general inpatient care-(non-respite)
+0657|Hospice services-physician services
+0658|Hospice services-room & board, nursing facility
+0659|Hospice services-other
+0660|Respite care (HHA)-general classification-(eff 9/93)
+0661|Respite care (HHA)-hourly charge/skilled nursing-(eff 9/93)
+0662|Respite care (HHA)-hourly charge/home health aide/-homemaker (eff 9/93)
+0663|Respite care (HHA)-daily respite charge
+0669|Respite care (HHA)-other respite care
+0670|OP special residence charges - general-classification
+0671|OP special residence charges - hospital based
+0672|OP special residence charges - contracted
+0679|OP special residence charges - other special-residence charges
+0680|Trauma Response - Not Used
+0681|Trauma Response-Level I
+0682|Trauma Response-Level II
+0683|Trauma Response-Level III
+0684|Trauma Response-Level IV
+0689|Trauma Response-other
+0690|Pre-Hospice/Palliative Care Services - General Classification (eff 1/14)
+0691|Pre-Hospice/Palliative Care Services - Visit Charge (eff 1/14)
+0692|Pre-Hospice/Palliative Care Services - Hourly Charge (eff 1/14)
+0693|Pre-Hospice/Palliative Care Services - Evaluation (eff 1/14)
+0694|Pre-Hospice/Palliative Care Services - Consultation & Education (eff 1/14)
+0695|Pre-Hospice/Palliative Care Services - Inpatient Care (eff 1/14)
+0696|Pre-Hospice/Palliative Care Services - Physician Services (eff 1/14)
+0699|Pre-Hospice/Palliative Care Services - Other Pre-Hospice/Palliative Care Services (eff 1/14)
+0700|Cast room-general classification
+0709|Cast room-other
+0710|Recovery room-general classification
+0719|Recovery room-other
+0720|Labor room/delivery-general classification
+0721|Labor room/delivery-labor
+0722|Labor room/delivery-delivery
+0723|Labor room/delivery-circumcision
+0724|Labor room/delivery-birthing center
+0729|Labor room/delivery-other
+0730|EKG/ECG-general classification
+0731|EKG/ECG-Holter moniter
+0732|EKG/ECG-telemetry (include fetal monitering until-9/93)
+0739|EKG/ECG-other
+0740|EEG-general classification
+0749|EEG (electroencephalogram)-other
+0750|Gastro-intestinal services-general classification
+0759|Gastro-intestinal services-other
+0760|Specialty Services-general classification
+0761|Specialty Services-treatment room-(eff 9/93)
+0762|Specialty Services-observation hours
+0769|Specialty Services-other specialty services
+0770|Preventative care services-general classification-(eff 10/94)
+0771|Preventative care services-vaccine administration-(eff 10/94)
+0779|Preventative care services-other (eff 10/94)
+0780|Telemedicine - general classification-(eff 10/97)
+0789|Telemedicine - other (eff 10/97)
+0790|Extra-Corporeal Shock Wave Therapy (formerly Lithotripsy)-general classification
+0791|Extracorporeal Shockwave Therapy
+0799|Extra-Corporeal Shock Wave Therapy (formerly Lithotripsy)-other
+0800|Inpatient renal dialysis-general classification
+0801|Inpatient renal dialysis-inpatient hemodialysis
+0802|Inpatient renal dialysis-inpatient peritoneal-(non-CAPD)
+0803|Inpatient renal dialysis-inpatient CAPD
+0804|Inpatient renal dialysis-inpatient CCPD
+0809|Inpatient renal dialysis-other inpatient dialysis
+0810|Organ acquisition-general classification
+0811|Organ acquisition-living donor (eff 10/94);-prior to 10/94, defined as living donor kidney
+0812|Organ acquisition-cadaver donor (eff 10/94);-prior to 10/94, defined as cadaver donor kidney
+0813|Organ acquisition-unknown donor (eff 10/94)-prior to 10/94, defined as unknown donor kidney
+0814|Organ acquisition - unsuccessful organ search--donor bank charges (eff 10/94); prior to 10/94,
+0815|Organ acquisition-cadaver donor-heart-(obsolete, eff 10/94)
+0816|Organ acquisition-other heart acquisition-(obsolete, eff 10/94)
+0817|Organ acquisition-donor-liver-(obsolete, eff 10/94)
+0819|Organ acquisition-other
+0820|Hemodialysis OP or home dialysis-general-classification
+0821|Hemodialysis OP or home dialysis-hemodialysis--composite or other rate
+0822|Hemodialysis OP or home dialysis-home supplies
+0823|Hemodialysis OP or home dialysis-home equipment
+0824|Hemodialysis OP or home dialysis-maintenance/100%
+0825|Hemodialysis OP or home dialysis-support services
+0829|Hemodialysis OP or home dialysis-other
+0830|Peritoneal dialysis OP or home-general-classification
+0831|Peritoneal dialysis OP or home-peritoneal--composite or other rate
+0832|Peritoneal dialysis OP or home-home supplies
+0833|Peritoneal dialysis OP or home-home equipment
+0834|Peritoneal dialysis OP or home-maintenance/100%
+0835|Peritoneal dialysis OP or home-support services
+0839|Peritoneal dialysis OP or home-other
+0840|CAPD outpatient-general classification
+0841|CAPD outpatient-CAPD/composite or other rate
+0842|CAPD outpatient-home supplies
+0843|CAPD outpatient-home equipment
+0844|CAPD outpatient-maintenance/100%
+0845|CAPD outpatient-support services
+0849|CAPD outpatient-other
+0850|CCPD outpatient-general classification
+0851|CCPD outpatient-CCPD/composite or other rate
+0852|CCPD outpatient-home supplies
+0853|CCPD outpatient-home equipment
+0854|CCPD outpatient-maintenance/100%
+0855|CCPD outpatient-support services
+0859|CCPD outpatient-other
+0860|Magnetoencephalography-general classification
+0861|Magnetoencephalography-MEG
+0880|Miscellaneous dialysis-general classification
+0881|Miscellaneous dialysis-ultrafiltration
+0882|Miscellaneous dialysis-home dialysis aide visit-(eff 9/93)
+0889|Miscellaneous dialysis-other
+0900|Behavior Health Treatments/Services (Also see 091X, an extension of 090X)-general classification
+0901|Behavior Health Treatments/Services-electroshock treatment
+0902|Behavior Health Treatments/Services-milieu therapy
+0903|Behavior Health Treatments/Services-play therapy
+0904|Behavior Health Treatments/Services-activity therapy
+0905|Behavior Health Treatments/Services-intensive outpatient services-psychiatric
+0906|Behavior Health Treatments/Services-Intensive outpatient services-chemical dependency
+0907|Behavior Health Treatments/Services-community behavioral health program (day treatment)
+0909|Behavior Health Treatments/Services: Other
+0910|Behavioral Health Treatment/Services-Extension of 090X-general classification
+0911|Behavioral Health Treatment/Services-rehabilitation
+0912|Behavioral Health Treatment/Services - partial hospitalization - less intensive
+0913|Behavioral Health Treatment/Services - partial hospitalization - intensive
+0914|Behavioral Health Treatment/Services-individual therapy
+0915|Behavioral Health Treatment/Services-group therapy
+0916|Behavioral Health Treatment/Services-family therapy
+0917|Behavioral Health Treatment/Services-bio feedback
+0918|Behavioral Health Treatment/Services-testing
+0919|Behavioral Health Treatment/Services-other
+0920|Other diagnostic services-general classification
+0921|Other diagnostic services-peripheral vascular lab
+0922|Other diagnostic services-electromyelogram
+0923|Other diagnostic services-pap smear
+0924|Other diagnostic services-allergy test
+0925|Other diagnostic services-pregnancy test
+0929|Other diagnostic services-other
+0930|Medical Rehabilitation Day Program
+0931|Medical Rehabilitation Day Program-half day
+0932|Medical Rehabilitation Day Program-full day
+0940|Other therapeutic services (also see 095X, an extention of 094X)-general classification
+0941|Other therapeutic services-recreational therapy
+0942|Other therapeutic services-education/training
+0943|Other therapeutic services-cardiac rehabilitation
+0944|Other therapeutic services-drug rehabilitation
+0945|Other therapeutic services-alcohol rehabilitation
+0946|Other therapeutic services-routine complex medical equipment
+0947|Other therapeutic services-ancillary complex medical equipment (eff 3/92)
+0948|Other therapeutic services-Pulmonary Rehabilitation
+0949|Other therapeutic services-other
+0951|Other therapeutic services-athletic training
+0952|Other therapeutic services-kinesiotherapy
+0953|Chemical Dependency (Drug & Alcohol) (Eff 10/13)
+0960|Professional fees-general classification
+0961|Professional fees-psychiatric
+0962|Professional fees-ophthalmology
+0963|Professional fees-anesthesiologist (MD)
+0964|Professional fees-anesthetist (CRNA)
+0969|Professional fees-other
+0971|Professional fees-laboratory
+0972|Professional fees-radiology diagnostic
+0973|Professional fees-radiology therapeutic
+0974|Professional fees-radiology nuclear medicine
+0975|Professional fees-operating room
+0976|Professional fees-respiratory therapy
+0977|Professional fees-physical therapy
+0978|Professional fees-occupational therapy
+0979|Professional fees-speech pathology
+0981|Professional fees-emergency room
+0982|Professional fees-outpatient services
+0983|Professional fees-clinic
+0984|Professional fees-medical social services
+0985|Professional fees-EKG
+0986|Professional fees-EEG
+0987|Professional fees-hospital visit
+0988|Professional fees-consultation
+0989|Professional fees-private duty nurse
+0990|Patient convenience items-general classification
+0991|Patient convenience items-cafeteria/guest tray
+0992|Patient convenience items-private linen service
+0993|Patient convenience items-telephone/telecom
+0994|Patient convenience items-tv/radio
+0995|Patient convenience items-nonpatient room rentals
+0996|Patient convenience items-late discharge charge
+0997|Patient convenience items-admission kits
+0998|Patient convenience items-beauty shop/barber
+0999|Patient convenience items-other-
+1000|Behavioral Health Accomodations-general classification
+1001|Behavioral Health Accomodations-residential-psychiatric
+1002|Behavioral Health Accomodations-residential-chemical dependency
+1003|Behavioral Health Accomodations-supervised living
+1004|Behavioral Health Accomodations-halfway house
+1005|Behavioral Health Accomodations-group home
+2100|Alternative Therapy Services-general classificaiton
+2101|Alternative Therapy Services-acupuncture
+2102|Alternative Therapy Services-accupressure
+2103|Alternative Therapy Services-massage
+2104|Alternative Therapy Services-reflexology
+2105|Alternative Therapy Services-biofeedback
+2106|Alternative Therapy Services-hypnosis
+2109|Alternative Therapy Services-other
+3101|Adult Care (ADLs) - Effective 4/1/03-adult day care, medical and social-hourly
+3102|Adult Care (ADLs) - Effective 4/1/03-adult day care, social-hourly
+3103|Adult Care (ADLs) - Effective 4/1/03-adult day care, medical and social-day
+3104|Adult Care (ADLs) - Effective 4/1/03-adult day care, social-daily
+3105|Adult Care (ADLs) - Effective 4/1/03-adult foster care-daily
+3109|Adult Care (ADLs) - Effective 4/1/03-other

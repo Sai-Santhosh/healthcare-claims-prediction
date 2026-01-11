@@ -1,0 +1,49 @@
+POS|POS_DESC
+01|Pharmacy
+03|School
+04|Homeless Shelter
+05|Indian Health Service - Free Standing Facility
+06|Indian Health Service - Provider-Based Facility
+07|Tribal 638 - Free Standing Facility
+08|Tribal 638 - Provider-Based Facility
+09|Prison - Correctional Facility
+11|Office
+12|Home
+13|Assisted Living Facility
+14|Group Home
+15|Mobile Unit
+16|Temporary Lodging
+17|Walk-in Retail Health Clinic
+18|Place of Employment/Worksite
+19|Off Campus-Outpatient hospital
+20|Urgent Care Facility
+21|Inpatient hospital
+22|On Campus-Outpatient hospital
+23|Emergency room - hospital
+24|Ambulatory surgical center
+25|Birthing center
+26|Military treatment facility
+31|Skilled nursing facility
+32|Nursing facility
+33|Custodial care facility
+34|Hospice
+35|Adult living care facilities (ALCF)-Unassigned as of 04/01/08
+41|Ambulance - land
+42|Ambulance - air or water
+49|Independent Clinic
+50|Federally qualified health centers
+51|Inpatient psychiatric facility
+52|Psychiatric facility partial hospitalization
+53|Community mental health center
+54|Intermediate care facility/mentally retarded
+55|Residential substance abuse treatment facility
+56|Psychiatric residential treatment center
+57|Non-residential Substance Abuse Treatment Facility
+60|Mass immunizations center (eff. 9/1/97)
+61|Comprehensive inpatient rehabilitation facility
+62|Comprehensive outpatient rehabilitation facility
+65|End stage renal disease treatment facility
+71|State or local public health clinic
+72|Rural health clinic
+81|Independent laboratory
+99|Other unlisted facility

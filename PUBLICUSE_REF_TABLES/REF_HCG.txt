@@ -1,0 +1,139 @@
+MR_LINE_CASE_KEY|CODE_SET_YEAR|MR_LINE_DESC2|MR_LINE|MR_LINE_DESC|PROD_TYPE|MR_LINE_DESC1|HCG_DESC_02
+523|2016|Medical|I11a|HIP Medical - General|MEDICAL|HIP |1. Facility Inpatient
+524|2016|Medical|I11b|HIP Medical - Rehabilitation|MEDICAL|HIP |1. Facility Inpatient
+525|2016|Surgical|I12|HIP Surgical|MEDICAL|HIP |1. Facility Inpatient
+526|2016|Psychiatric|I13a|HIP Psychiatric - Hospital|MEDICAL|HIP |1. Facility Inpatient
+527|2016|Psychiatric|I13b|HIP Psychiatric - Residential|MEDICAL|HIP |1. Facility Inpatient
+528|2016|Alcohol and Drug Abuse|I14a|HIP Alcohol and Drug Abuse - Hospital|MEDICAL|HIP |1. Facility Inpatient
+529|2016|Alcohol and Drug Abuse|I14b|HIP Alcohol and Drug Abuse - Residential|MEDICAL|HIP |1. Facility Inpatient
+530|2016|Mat Norm Delivery|I21a|HIP Mat Norm Delivery|MEDICAL|HIP |1. Facility Inpatient
+531|2016|Mat Norm Delivery|I21b|HIP Mat Norm Delivery - Mom\Baby Cmbnd|MEDICAL|HIP |1. Facility Inpatient
+532|2016|Mat Csect Delivery|I22a|HIP Mat Csect Delivery|MEDICAL|HIP |1. Facility Inpatient
+533|2016|Mat Csect Delivery|I22b|HIP Mat Csect Delivery - Mom\Baby Cmbnd|MEDICAL|HIP |1. Facility Inpatient
+534|2016|Well Newborn|I23a|HIP Well Newborn - Normal Delivery|MEDICAL|HIP |1. Facility Inpatient
+535|2016|Well Newborn|I23b|HIP Well Newborn - Csect Delivery|MEDICAL|HIP |1. Facility Inpatient
+536|2016|Well Newborn|I23c|HIP Well Newborn - Unknown Delivery|MEDICAL|HIP |1. Facility Inpatient
+537|2016|Other Newborn|I24|HIP Other Newborn|MEDICAL|HIP |1. Facility Inpatient
+538|2016|Maternity Non-Delivery|I25|HIP Maternity Non-Delivery|MEDICAL|HIP |1. Facility Inpatient
+539|2016|SNF|I31|HIP SNF|MEDICAL|HIP |1. Facility Inpatient
+540|2016|Observation|O10|HOP Observation|MEDICAL|HOP |2. Facility Outpatient
+541|2016|Emergency Room|O11a|HOP Emergency Room - Hospital|MEDICAL|HOP |2. Facility Outpatient
+542|2016|Emergency Room|O11b|HOP Emergency Room - Urgent Care|MEDICAL|HOP |2. Facility Outpatient
+543|2016|Surgery|O12a|HOP Surgery - Hospital Outpatient|MEDICAL|HOP |2. Facility Outpatient
+544|2016|Surgery|O12b|HOP Surgery - Ambulatory Surgery Center|MEDICAL|HOP |2. Facility Outpatient
+545|2016|Radiology General|O13a|HOP Radiology General - Therapeutic|MEDICAL|HOP |2. Facility Outpatient
+546|2016|Radiology General|O13b|HOP Radiology General - Diagnostic|MEDICAL|HOP |2. Facility Outpatient
+547|2016|Radiology - CT/MRI/PET|O14a|HOP Radiology - CT/MRI/PET - CT Scan|MEDICAL|HOP |2. Facility Outpatient
+548|2016|Radiology - CT/MRI/PET|O14b|HOP Radiology - CT/MRI/PET - MRI|MEDICAL|HOP |2. Facility Outpatient
+549|2016|Radiology - CT/MRI/PET|O14c|HOP Radiology - CT/MRI/PET - PET|MEDICAL|HOP |2. Facility Outpatient
+550|2016|Pathology/Lab|O15|HOP Pathology/Lab|MEDICAL|HOP |2. Facility Outpatient
+551|2016|Pharmacy|O16a|HOP Pharmacy - General|MEDICAL|HOP |2. Facility Outpatient
+552|2016|Pharmacy|O16b|HOP Pharmacy - Chemotherapy|MEDICAL|HOP |2. Facility Outpatient
+553|2016|Cardiovascular|O17|HOP Cardiovascular|MEDICAL|HOP |2. Facility Outpatient
+554|2016|PT/OT/ST|O18|HOP PT/OT/ST|MEDICAL|HOP |2. Facility Outpatient
+555|2016|Psychiatric|O31a|HOP Psychiatric - Partial Hospitalization|MEDICAL|HOP |2. Facility Outpatient
+556|2016|Psychiatric|O31b|HOP Psychiatric - Intensive Outpatient|MEDICAL|HOP |2. Facility Outpatient
+557|2016|Alcohol & Drug Abuse|O32a|HOP Alcohol & Drug Abuse - Partial Hospitalization|MEDICAL|HOP |2. Facility Outpatient
+558|2016|Alcohol & Drug Abuse|O32b|HOP Alcohol & Drug Abuse - Intensive Outpatient|MEDICAL|HOP |2. Facility Outpatient
+559|2016|Other|O41a|HOP Other - General|MEDICAL|HOP |2. Facility Outpatient
+560|2016|Other|O41b|HOP Other - Blood|MEDICAL|HOP |2. Facility Outpatient
+561|2016|Other|O41d|HOP Other - Clinic|MEDICAL|HOP |2. Facility Outpatient
+562|2016|Other|O41e|HOP Other - Diagnostic|MEDICAL|HOP |2. Facility Outpatient
+563|2016|Other|O41f|HOP Other - Dialysis|MEDICAL|HOP |2. Facility Outpatient
+564|2016|Other|O41g|HOP Other - DME/Supplies|MEDICAL|HOP |2. Facility Outpatient
+565|2016|Other|O41h|HOP Other - Trtmt/SpcltySvcs|MEDICAL|HOP |2. Facility Outpatient
+566|2016|Other|O41j|HOP Other - Pulmonary|MEDICAL|HOP |2. Facility Outpatient
+567|2016|Preventive|O51a|HOP Preventive - General|MEDICAL|HOP |2. Facility Outpatient
+568|2016|Preventive|O51b|HOP Preventive - Colonoscopy|MEDICAL|HOP |2. Facility Outpatient
+569|2016|Preventive|O51c|HOP Preventive - Mammography|MEDICAL|HOP |2. Facility Outpatient
+570|2016|Preventive|O51d|HOP Preventive - Lipid Panel|MEDICAL|HOP |2. Facility Outpatient
+571|2016|Inpatient Surgery|P11|PHY Inpatient Surgery|MEDICAL|PHY |3. Professional
+572|2016|Inpatient Anesthesia|P13|PHY Inpatient Anesthesia|MEDICAL|PHY |3. Professional
+573|2016|Outpatient Surgery|P14|PHY Outpatient Surgery|MEDICAL|PHY |3. Professional
+574|2016|Office Surgery|P15|PHY Office Surgery|MEDICAL|PHY |3. Professional
+575|2016|Outpatient Anesthesia|P16|PHY Outpatient Anesthesia|MEDICAL|PHY |3. Professional
+576|2016|Maternity|P21a|PHY Maternity - Normal Deliveries|MEDICAL|PHY |3. Professional
+577|2016|Maternity|P21b|PHY Maternity - Cesarean Deliveries|MEDICAL|PHY |3. Professional
+578|2016|Maternity|P21c|PHY Maternity - Non-Deliveries|MEDICAL|PHY |3. Professional
+579|2016|Maternity|P21d|PHY Maternity - Ancillary|MEDICAL|PHY |3. Professional
+580|2016|Maternity|P21e|PHY Maternity - Anesthesia|MEDICAL|PHY |3. Professional
+581|2016|Inpatient Visits|P31d|PHY Inpatient Visits - Medical|MEDICAL|PHY |3. Professional
+582|2016|Inpatient Visits|P31e|PHY Inpatient Visits - Psychiatric|MEDICAL|PHY |3. Professional
+583|2016|Inpatient Visits|P31f|PHY Inpatient Visits - Alcohol and Drug Abuse|MEDICAL|PHY |3. Professional
+584|2016|Office/Home Visits|P32c|PHY Office/Home Visits - PCP|MEDICAL|PHY |3. Professional
+585|2016|Office/Home Visits|P32d|PHY Office/Home Visits - Specialist|MEDICAL|PHY |3. Professional
+586|2016|Urgent Care Visits|P33|PHY Urgent Care Visits|MEDICAL|PHY |3. Professional
+587|2016|Office Administered Drugs|P34a|PHY Office Administered Drugs - General|MEDICAL|PHY |3. Professional
+588|2016|Office Administered Drugs|P34b|PHY Office Administered Drugs - Chemotherapy|MEDICAL|PHY |3. Professional
+589|2016|Allergy Testing|P35|PHY Allergy Testing|MEDICAL|PHY |3. Professional
+590|2016|Allergy Immunotherapy|P36|PHY Allergy Immunotherapy|MEDICAL|PHY |3. Professional
+591|2016|Miscellaneous Medical|P37a|PHY Miscellaneous Medical - General|MEDICAL|PHY |3. Professional
+592|2016|Miscellaneous Medical|P37b|PHY Miscellaneous Medical - Gastroenterology|MEDICAL|PHY |3. Professional
+593|2016|Miscellaneous Medical|P37c|PHY Miscellaneous Medical - Ophthalmology|MEDICAL|PHY |3. Professional
+594|2016|Miscellaneous Medical|P37d|PHY Miscellaneous Medical - Otorhinolaryngology|MEDICAL|PHY |3. Professional
+595|2016|Miscellaneous Medical|P37e|PHY Miscellaneous Medical - Vestibular Function Tests|MEDICAL|PHY |3. Professional
+596|2016|Miscellaneous Medical|P37f|PHY Miscellaneous Medical - Non-Invas. Vasc. Diag. Studies|MEDICAL|PHY |3. Professional
+597|2016|Miscellaneous Medical|P37g|PHY Miscellaneous Medical - Pulmonology|MEDICAL|PHY |3. Professional
+598|2016|Miscellaneous Medical|P37h|PHY Miscellaneous Medical - Neurology|MEDICAL|PHY |3. Professional
+599|2016|Miscellaneous Medical|P37i|PHY Miscellaneous Medical - Central Nervous System Tests|MEDICAL|PHY |3. Professional
+600|2016|Miscellaneous Medical|P37j|PHY Miscellaneous Medical - Dermatology|MEDICAL|PHY |3. Professional
+601|2016|Miscellaneous Medical|P37k|PHY Miscellaneous Medical - Dialysis|MEDICAL|PHY |3. Professional
+602|2016|Preventive Other|P40a|PHY Preventive Other - General|MEDICAL|PHY |3. Professional
+603|2016|Preventive Other|P40b|PHY Preventive Other - Colonoscopy|MEDICAL|PHY |3. Professional
+604|2016|Preventive Other|P40c|PHY Preventive Other - Mammography|MEDICAL|PHY |3. Professional
+605|2016|Preventive Other|P40d|PHY Preventive Other - Lab|MEDICAL|PHY |3. Professional
+606|2016|Preventive Immunizations|P41|PHY Preventive Immunizations|MEDICAL|PHY |3. Professional
+607|2016|Preventive Well Baby Exams|P42|PHY Preventive Well Baby Exams|MEDICAL|PHY |3. Professional
+608|2016|Preventive Physical Exams|P43|PHY Preventive Physical Exams|MEDICAL|PHY |3. Professional
+609|2016|Vision Exams|P44|PHY Vision Exams|VISION|PHY |3. Professional
+610|2016|Hearing and Speech Exams|P45|PHY Hearing and Speech Exams|MEDICAL|PHY |3. Professional
+611|2016|ER Visits and Observation Care|P51|PHY ER Visits and Observation Care|MEDICAL|PHY |3. Professional
+612|2016|Physical Therapy|P53|PHY Physical Therapy|MEDICAL|PHY |3. Professional
+613|2016|Cardiovascular|P54|PHY Cardiovascular|MEDICAL|PHY |3. Professional
+614|2016|Radiology IP|P55b|PHY Radiology IP - CT Scan|MEDICAL|PHY |3. Professional
+615|2016|Radiology IP|P55c|PHY Radiology IP - MRI|MEDICAL|PHY |3. Professional
+616|2016|Radiology IP|P55d|PHY Radiology IP - PET|MEDICAL|PHY |3. Professional
+617|2016|Radiology IP|P55e|PHY Radiology IP - General - Therapeutic|MEDICAL|PHY |3. Professional
+618|2016|Radiology IP|P55f|PHY Radiology IP - General - Diagnostic|MEDICAL|PHY |3. Professional
+619|2016|Radiology OP - General|P56a|PHY Radiology OP - General - Therapeutic|MEDICAL|PHY |3. Professional
+620|2016|Radiology OP - General|P56b|PHY Radiology OP - General - Diagnostic|MEDICAL|PHY |3. Professional
+621|2016|Radiology OP- CT/MRI/PET|P57a|PHY Radiology OP- CT/MRI/PET - CT Scan|MEDICAL|PHY |3. Professional
+622|2016|Radiology OP- CT/MRI/PET|P57b|PHY Radiology OP- CT/MRI/PET - MRI|MEDICAL|PHY |3. Professional
+623|2016|Radiology OP- CT/MRI/PET|P57c|PHY Radiology OP- CT/MRI/PET - PET|MEDICAL|PHY |3. Professional
+624|2016|Radiology Office - General|P58c|PHY Radiology Office - General - Therapeutic|MEDICAL|PHY |3. Professional
+625|2016|Radiology Office - General|P58d|PHY Radiology Office - General - Diagnostic|MEDICAL|PHY |3. Professional
+626|2016|Radiology Office - General|P58e|PHY Radiology Office - General - Radiology Center - Therapeutic|MEDICAL|PHY |3. Professional
+627|2016|Radiology Office - General|P58f|PHY Radiology Office - General - Radiology Center - Diagnostic|MEDICAL|PHY |3. Professional
+628|2016|Radiology Office - CT/MRI/PET|P59a|PHY Radiology Office - CT/MRI/PET - CT Scan|MEDICAL|PHY |3. Professional
+629|2016|Radiology Office - CT/MRI/PET|P59b|PHY Radiology Office - CT/MRI/PET - MRI|MEDICAL|PHY |3. Professional
+630|2016|Radiology Office - CT/MRI/PET|P59c|PHY Radiology Office - CT/MRI/PET - PET|MEDICAL|PHY |3. Professional
+631|2016|Radiology Office - CT/MRI/PET|P59d|PHY Radiology Office - CT/MRI/PET - CT Scan - Radiology Center|MEDICAL|PHY |3. Professional
+632|2016|Radiology Office - CT/MRI/PET|P59e|PHY Radiology Office - CT/MRI/PET - MRI - Radiology Center|MEDICAL|PHY |3. Professional
+633|2016|Radiology Office - CT/MRI/PET|P59f|PHY Radiology Office - CT/MRI/PET - PET - Radiology Center|MEDICAL|PHY |3. Professional
+634|2016|Pathology/Lab - Inpatient & Outpatient|P61a|PHY Pathology/Lab - Inpatient & Outpatient - Inpatient|MEDICAL|PHY |3. Professional
+635|2016|Pathology/Lab - Inpatient & Outpatient|P61b|PHY Pathology/Lab - Inpatient & Outpatient - Outpatient|MEDICAL|PHY |3. Professional
+636|2016|Pathology/Lab - Office|P63a|PHY Pathology/Lab - Office - General|MEDICAL|PHY |3. Professional
+637|2016|Pathology/Lab - Office|P63b|PHY Pathology/Lab - Office - Venipuncture|MEDICAL|PHY |3. Professional
+638|2016|Pathology/Lab - Office|P63c|PHY Pathology/Lab - Office - Independent Lab|MEDICAL|PHY |3. Professional
+639|2016|Chiropractor|P65|PHY Chiropractor|MEDICAL|PHY |3. Professional
+640|2016|Outpatient Psychiatric|P66|PHY Outpatient Psychiatric|MEDICAL|PHY |3. Professional
+641|2016|Outpatient Alcohol & Drug Abuse|P67|PHY Outpatient Alcohol & Drug Abuse|MEDICAL|PHY |3. Professional
+642|2016|Prescription Drugs|P81a|OTH Prescription Drugs - Non-Specialty Generic|RX|RX  |4. Prescription Drug
+643|2016|Prescription Drugs|P81b|OTH Prescription Drugs - Non-Specialty Multi Source Brand|RX|RX  |4. Prescription Drug
+644|2016|Prescription Drugs|P81c|OTH Prescription Drugs - Non-Specialty Single Source Brand|RX|RX  |4. Prescription Drug
+645|2016|Prescription Drugs|P81e|OTH Prescription Drugs - OTC|RX|RX  |4. Prescription Drug
+646|2016|Prescription Drugs|P81g|OTH Prescription Drugs - Specialty|RX|RX  |4. Prescription Drug
+647|2016|Private Duty Nursing/Home Health|P82a|OTH Private Duty Nursing/Home Health - HH|MEDICAL|OTH |5. Ancillary
+648|2016|Private Duty Nursing/Home Health|P82b|OTH Private Duty Nursing/Home Health - Hospice|MEDICAL|OTH |5. Ancillary
+649|2016|Ambulance|P83|OTH Ambulance|MEDICAL|OTH |5. Ancillary
+650|2016|DME and Supplies|P84|OTH DME and Supplies|MEDICAL|OTH |5. Ancillary
+651|2016|Prosthetics|P85|OTH Prosthetics|MEDICAL|OTH |5. Ancillary
+652|2016|Benefits Glasses/Contacts|P89|OTH Benefits Glasses/Contacts|VISION|OTH |5. Ancillary
+653|2016|Benefits Other|P99a|OTH Benefits Other - General|MEDICAL|OTH |5. Ancillary
+654|2016|Benefits Other|P99b|OTH Benefits Other - Hearing Aids|MEDICAL|OTH |5. Ancillary
+655|2016|Benefits Other|P99c|OTH Benefits Other - Dental|MEDICAL|OTH |5. Ancillary
+656|2016|Benefits Other|P99d|OTH Benefits Other - Acupuncture|MEDICAL|OTH |5. Ancillary
+657|2016|Benefits Other|P99e|OTH Benefits Other - Reproductive Medicine|MEDICAL|OTH |5. Ancillary
+658|2016|Benefits Other|P99f|OTH Benefits Other - Temporary Codes|MEDICAL|OTH |5. Ancillary
+659|2016|Benefits Other|P99g|OTH Benefits Other - Documentation/Unclassified|MEDICAL|OTH |5. Ancillary
+660|2016|Benefits Other|P99h|OTH Benefits Other - Non-Emergency Transportation|MEDICAL|OTH |5. Ancillary

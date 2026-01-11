@@ -1,0 +1,47 @@
+INSURANCE_TYPE|INSURANCE_TYPE_DESC|PRODUCT_TYPE
+12|Medicare Secondary Working Aged Beneficiary or Spouse with Employer Group Health Plan|MP
+13|Medicare Secondary End-Stage Renal Disease Beneficiary in the 12-month coordination period with an Employer Group Health Plan|SN3
+14|Medicare Secondary No-Fault Insurance including Insurance in which Auto is Primary|MP
+15|Medicare Secondary Workers' Compensation|MC
+16|Medicare Secondary Public Health Service or Other Federal Agency|MDE
+17|Dental|MC
+18|Vision|PPO
+19|Prescription Drugs|PPO
+41|Medicare Secondary Black Lung|SN3
+42|Medicare Secondary Veterans' Administration|MC
+43|Medicare Secondary Disabled Beneficiary Under Age 65 with Large Group Health Plan (LGHP)|MP
+47|Medicare Secondary Other Liability Insurance is Primary|MP
+AP|Auto Insurance Policy|PPO
+C1|Commercial|PPO
+CO|Consolidated Omnibus Reconciliation Act (COBRA)|PPO
+CP|Medicare Conditionally Primary|MC
+D|Disability|MD
+DB|Disability Benefits|MD
+EP|Exclusive Provider Organization|EPO
+FF|Family or Friends|PPO
+FI|Federal Employees Health Benefits Program|PPO
+HM|Health Maintenance Organization (HMO)|HMO
+HN|Health Maintenance Organization (HMO) Medicare Advantage|MR
+HS|Special Low Income Medicare Beneficiary|MC
+IN|Indemnity|IND
+IP|Individual Policy|PPO
+LC|Long Term Care|PPO
+LD|Long Term Policy|PPO
+LI|Life Insurance|PPO
+LT|Litigation|PPO
+MH|Medigap Part A|MC
+MI|Medigap Part B|MC
+OT|Other|PPO
+PC|Personal Care|PPO
+PE|Property Insurance|PPO
+PR|Preferred Provider Organization (PPO)|PPO
+PS|Point of Service (POS)|POS
+QM|Qualified Medicare Beneficiary|MR
+RP|Property Insurance - Real|PPO
+SP|Supplemental Policy|PPO
+TF|Tax Equity Fiscal Responsibility Act (TEFRA)|PPO
+TR|Tricare|PPO
+U|Multiple Options Health Plan|PPO
+VA|Veterans Administration Plan|PPO
+WC|Workers' Compensation|PPO
+WU|Wrap Up Policy|PPO
