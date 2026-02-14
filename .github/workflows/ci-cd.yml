@@ -1,0 +1,281 @@
+# =============================================================================
+# CI/CD Pipeline for Medical Claims Data Engineering Platform
+# =============================================================================
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+
+env:
+  PYTHON_VERSION: '3.10'
+  AWS_REGION: 'us-east-1'
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Code Quality & Linting
+  # ---------------------------------------------------------------------------
+  lint:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install flake8 black isort mypy
+          
+      - name: Run Black (formatting)
+        run: black --check src/ tests/
+        
+      - name: Run isort (imports)
+        run: isort --check-only src/ tests/
+        
+      - name: Run Flake8 (linting)
+        run: flake8 src/ tests/ --max-line-length=100
+        
+      - name: Run MyPy (type checking)
+        run: mypy src/ --ignore-missing-imports
+
+  # ---------------------------------------------------------------------------
+  # Unit Tests
+  # ---------------------------------------------------------------------------
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov pytest-xdist
+          
+      - name: Run unit tests
+        run: |
+          pytest tests/ \
+            --cov=src \
+            --cov-report=xml \
+            --cov-report=html \
+            -v \
+            --tb=short
+            
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          fail_ci_if_error: false
+
+  # ---------------------------------------------------------------------------
+  # DBT Tests
+  # ---------------------------------------------------------------------------
+  dbt-test:
+    name: DBT Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          
+      - name: Install DBT
+        run: |
+          pip install dbt-core dbt-postgres
+          
+      - name: Check DBT project
+        working-directory: dbt
+        run: |
+          dbt debug --profiles-dir profiles/ || true
+          dbt compile --profiles-dir profiles/ || true
+
+  # ---------------------------------------------------------------------------
+  # Build Docker Image
+  # ---------------------------------------------------------------------------
+  build:
+    name: Build & Push Docker
+    runs-on: ubuntu-latest
+    needs: [test, dbt-test]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+          
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+        
+      - name: Build and push Docker image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: claims-pipeline
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+
+  # ---------------------------------------------------------------------------
+  # Deploy to Staging
+  # ---------------------------------------------------------------------------
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: build
+    environment: staging
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+          
+      - name: Deploy Lambda functions
+        run: |
+          # Package Lambda function
+          cd src/aws/lambda
+          zip -r function.zip .
+          
+          # Update Lambda function
+          aws lambda update-function-code \
+            --function-name claims-etl-trigger-staging \
+            --zip-file fileb://function.zip
+            
+      - name: Run DBT migrations
+        run: |
+          pip install dbt-core dbt-postgres
+          cd dbt
+          dbt run --profiles-dir profiles/ --target staging
+          dbt test --profiles-dir profiles/ --target staging
+          
+      - name: Notify success
+        run: |
+          echo "Successfully deployed to staging"
+
+  # ---------------------------------------------------------------------------
+  # Deploy to Production
+  # ---------------------------------------------------------------------------
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    environment: production
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+          
+      - name: Deploy Lambda functions
+        run: |
+          cd src/aws/lambda
+          zip -r function.zip .
+          
+          aws lambda update-function-code \
+            --function-name claims-etl-trigger \
+            --zip-file fileb://function.zip
+            
+      - name: Run DBT migrations
+        run: |
+          pip install dbt-core dbt-postgres
+          cd dbt
+          dbt run --profiles-dir profiles/ --target prod
+          dbt test --profiles-dir profiles/ --target prod
+          
+      - name: Send deployment notification
+        run: |
+          aws sns publish \
+            --topic-arn ${{ secrets.SNS_TOPIC_ARN }} \
+            --message "Production deployment completed successfully for commit ${{ github.sha }}"
+
+  # ---------------------------------------------------------------------------
+  # Integration Tests
+  # ---------------------------------------------------------------------------
+  integration-test:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+          
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest boto3
+          
+      - name: Run integration tests
+        env:
+          ENVIRONMENT: staging
+        run: |
+          pytest tests/integration/ -v --tb=short

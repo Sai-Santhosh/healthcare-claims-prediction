@@ -1,30 +1,44 @@
 """
-Logging Utilities Module
-Provides centralized logging configuration and utilities.
+Logging Module
+Centralized logging configuration with colored output and CloudWatch integration.
 """
 
-import logging
+import os
 import sys
-from pathlib import Path
+import logging
 from datetime import datetime
 from typing import Optional
+from contextlib import contextmanager
+import time
+
+
+# Color codes for terminal output
+class Colors:
+    RESET = "\033[0m"
+    RED = "\033[91m"
+    GREEN = "\033[92m"
+    YELLOW = "\033[93m"
+    BLUE = "\033[94m"
+    MAGENTA = "\033[95m"
+    CYAN = "\033[96m"
+    WHITE = "\033[97m"
 
 
 class ColoredFormatter(logging.Formatter):
-    """Custom formatter with colored output for console."""
+    """Formatter with colored output for different log levels."""
     
     COLORS = {
-        'DEBUG': '\033[36m',      # Cyan
-        'INFO': '\033[32m',       # Green
-        'WARNING': '\033[33m',    # Yellow
-        'ERROR': '\033[31m',      # Red
-        'CRITICAL': '\033[35m',   # Magenta
+        logging.DEBUG: Colors.CYAN,
+        logging.INFO: Colors.GREEN,
+        logging.WARNING: Colors.YELLOW,
+        logging.ERROR: Colors.RED,
+        logging.CRITICAL: Colors.MAGENTA,
     }
-    RESET = '\033[0m'
     
     def format(self, record):
-        color = self.COLORS.get(record.levelname, self.RESET)
-        record.levelname = f"{color}{record.levelname}{self.RESET}"
+        color = self.COLORS.get(record.levelno, Colors.WHITE)
+        record.levelname = f"{color}{record.levelname}{Colors.RESET}"
+        record.name = f"{Colors.BLUE}{record.name}{Colors.RESET}"
         return super().format(record)
 
 
@@ -34,107 +48,111 @@ def setup_logging(
     log_format: Optional[str] = None
 ) -> None:
     """
-    Set up logging configuration for the project.
+    Setup logging configuration.
     
     Args:
         log_level: Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-        log_file: Path to log file (optional)
-        log_format: Custom log format string (optional)
+        log_file: Optional file path for log output
+        log_format: Optional custom log format
     """
-    if log_format is None:
-        log_format = "%(asctime)s | %(name)-25s | %(levelname)-8s | %(message)s"
+    level = getattr(logging, log_level.upper(), logging.INFO)
     
-    # Create logs directory if needed
-    if log_file:
-        log_path = Path(log_file)
-        log_path.parent.mkdir(parents=True, exist_ok=True)
+    format_str = log_format or "%(asctime)s | %(name)s | %(levelname)s | %(message)s"
     
-    # Get root logger
+    # Root logger
     root_logger = logging.getLogger()
-    root_logger.setLevel(getattr(logging, log_level.upper()))
+    root_logger.setLevel(level)
     
     # Clear existing handlers
     root_logger.handlers.clear()
     
     # Console handler with colors
     console_handler = logging.StreamHandler(sys.stdout)
-    console_handler.setLevel(getattr(logging, log_level.upper()))
-    console_formatter = ColoredFormatter(log_format)
-    console_handler.setFormatter(console_formatter)
+    console_handler.setLevel(level)
+    console_handler.setFormatter(ColoredFormatter(format_str))
     root_logger.addHandler(console_handler)
     
-    # File handler (no colors)
+    # File handler if specified
     if log_file:
-        file_handler = logging.FileHandler(log_file, mode='a', encoding='utf-8')
-        file_handler.setLevel(logging.DEBUG)  # Log everything to file
-        file_formatter = logging.Formatter(log_format)
-        file_handler.setFormatter(file_formatter)
+        os.makedirs(os.path.dirname(log_file), exist_ok=True)
+        file_handler = logging.FileHandler(log_file)
+        file_handler.setLevel(level)
+        file_handler.setFormatter(logging.Formatter(format_str))
         root_logger.addHandler(file_handler)
+    
+    # Reduce noise from third-party libraries
+    logging.getLogger("boto3").setLevel(logging.WARNING)
+    logging.getLogger("botocore").setLevel(logging.WARNING)
+    logging.getLogger("urllib3").setLevel(logging.WARNING)
 
 
 def get_logger(name: str) -> logging.Logger:
     """
-    Get a logger instance with the specified name.
+    Get a logger instance.
     
     Args:
-        name: Name of the logger (usually __name__)
-    
+        name: Logger name (usually __name__)
+        
     Returns:
-        Configured logger instance
+        Logger instance
     """
     return logging.getLogger(name)
 
 
 class PipelineLogger:
     """
-    Context manager for logging pipeline stages.
-    Provides automatic timing and status logging.
+    Context manager for logging pipeline stages with timing.
     """
     
-    def __init__(self, stage_name: str, logger: Optional[logging.Logger] = None):
+    def __init__(self, stage_name: str, logger: logging.Logger = None):
         self.stage_name = stage_name
-        self.logger = logger or get_logger(__name__)
+        self.logger = logger or logging.getLogger(__name__)
         self.start_time = None
+        self.end_time = None
     
     def __enter__(self):
-        self.start_time = datetime.now()
-        self.logger.info(f"{'='*60}")
+        self.start_time = time.time()
+        self.logger.info(f"{'─' * 40}")
         self.logger.info(f"Starting: {self.stage_name}")
-        self.logger.info(f"{'='*60}")
+        self.logger.info(f"{'─' * 40}")
         return self
     
     def __exit__(self, exc_type, exc_val, exc_tb):
-        elapsed = datetime.now() - self.start_time
+        self.end_time = time.time()
+        duration = self.end_time - self.start_time
         
         if exc_type is None:
-            self.logger.info(f"Completed: {self.stage_name}")
-            self.logger.info(f"Duration: {elapsed}")
-            self.logger.info(f"{'='*60}\n")
+            self.logger.info(f"✓ Completed: {self.stage_name} ({duration:.2f}s)")
         else:
-            self.logger.error(f"Failed: {self.stage_name}")
-            self.logger.error(f"Error: {exc_val}")
-            self.logger.error(f"Duration: {elapsed}")
-            self.logger.info(f"{'='*60}\n")
+            self.logger.error(f"✗ Failed: {self.stage_name} ({duration:.2f}s)")
+            self.logger.error(f"  Error: {exc_val}")
         
         return False  # Don't suppress exceptions
 
 
-def log_dataframe_info(df, logger: logging.Logger, name: str = "DataFrame") -> None:
+@contextmanager
+def log_stage(name: str, logger: logging.Logger = None):
     """
-    Log information about a pandas DataFrame.
+    Context manager for logging a stage with timing.
     
     Args:
-        df: pandas DataFrame to log info about
-        logger: Logger instance to use
-        name: Name to identify the DataFrame in logs
+        name: Stage name
+        logger: Logger instance
+        
+    Yields:
+        None
     """
-    logger.info(f"{name} Info:")
-    logger.info(f"  Shape: {df.shape[0]:,} rows x {df.shape[1]} columns")
-    logger.info(f"  Memory: {df.memory_usage(deep=True).sum() / 1024**2:.2f} MB")
-    logger.info(f"  Columns: {list(df.columns)[:10]}{'...' if len(df.columns) > 10 else ''}")
+    _logger = logger or logging.getLogger(__name__)
+    start = time.time()
     
-    # Missing values summary
-    missing = df.isnull().sum()
-    missing_cols = missing[missing > 0]
-    if len(missing_cols) > 0:
-        logger.info(f"  Columns with missing values: {len(missing_cols)}")
+    _logger.info(f"Starting: {name}")
+    
+    try:
+        yield
+    except Exception as e:
+        duration = time.time() - start
+        _logger.error(f"Failed: {name} ({duration:.2f}s) - {e}")
+        raise
+    else:
+        duration = time.time() - start
+        _logger.info(f"Completed: {name} ({duration:.2f}s)")

@@ -1,0 +1,60 @@
+# =============================================================================
+# DBT Profiles Configuration
+# Medical Claims Data Engineering Platform
+# =============================================================================
+
+claims_warehouse:
+  target: dev  # Default target
+  
+  outputs:
+    # Development environment (local Docker)
+    dev:
+      type: postgres
+      host: "{{ env_var('DB_HOST', 'localhost') }}"
+      port: "{{ env_var('DB_PORT', '5432') | int }}"
+      user: "{{ env_var('DB_USER', 'postgres') }}"
+      password: "{{ env_var('DB_PASSWORD', 'postgres') }}"
+      dbname: "{{ env_var('DB_NAME', 'claims_warehouse') }}"
+      schema: staging
+      threads: 4
+      keepalives_idle: 0
+      connect_timeout: 10
+      search_path: staging,marts,raw
+      
+    # Staging environment
+    staging:
+      type: postgres
+      host: "{{ env_var('STAGING_DB_HOST') }}"
+      port: "{{ env_var('STAGING_DB_PORT', '5432') | int }}"
+      user: "{{ env_var('STAGING_DB_USER') }}"
+      password: "{{ env_var('STAGING_DB_PASSWORD') }}"
+      dbname: "{{ env_var('STAGING_DB_NAME', 'claims_warehouse') }}"
+      schema: staging
+      threads: 8
+      keepalives_idle: 0
+      sslmode: require
+      
+    # Production environment (RDS)
+    prod:
+      type: postgres
+      host: "{{ env_var('PROD_DB_HOST') }}"
+      port: "{{ env_var('PROD_DB_PORT', '5432') | int }}"
+      user: "{{ env_var('PROD_DB_USER') }}"
+      password: "{{ env_var('PROD_DB_PASSWORD') }}"
+      dbname: "{{ env_var('PROD_DB_NAME', 'claims_warehouse') }}"
+      schema: staging
+      threads: 16
+      keepalives_idle: 0
+      sslmode: require
+      
+    # Redshift (optional)
+    # redshift:
+    #   type: redshift
+    #   host: "{{ env_var('REDSHIFT_HOST') }}"
+    #   port: 5439
+    #   user: "{{ env_var('REDSHIFT_USER') }}"
+    #   password: "{{ env_var('REDSHIFT_PASSWORD') }}"
+    #   dbname: claims_warehouse
+    #   schema: staging
+    #   threads: 16
+    #   ra3_node: true

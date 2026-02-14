@@ -1,0 +1,100 @@
+# =============================================================================
+# DBT Project Configuration
+# Medical Claims Data Engineering Pipeline
+# =============================================================================
+
+name: 'claims_transforms'
+version: '1.0.0'
+config-version: 2
+
+# Project paths
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+docs-paths: ["docs"]
+asset-paths: ["assets"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Profile to use
+profile: 'claims_warehouse'
+
+# Model configurations
+models:
+  claims_transforms:
+    # Staging models - raw data views
+    staging:
+      +materialized: view
+      +schema: staging
+      +tags: ['staging']
+      
+    # Intermediate models - ephemeral for performance
+    intermediate:
+      +materialized: ephemeral
+      +tags: ['intermediate']
+      
+    # Marts - final business-ready tables
+    marts:
+      +materialized: table
+      +schema: marts
+      +tags: ['marts']
+      
+      # Dimension tables
+      dimensions:
+        +materialized: table
+        +tags: ['dimension']
+        
+      # Fact tables  
+      facts:
+        +materialized: incremental
+        +tags: ['fact']
+
+# Seed configurations
+seeds:
+  claims_transforms:
+    +schema: seeds
+    +quote_columns: true
+
+# Snapshot configurations
+snapshots:
+  claims_transforms:
+    +target_schema: snapshots
+    +strategy: timestamp
+    +updated_at: updated_at
+
+# Variables
+vars:
+  # Date variables
+  start_date: '2016-01-01'
+  end_date: '2016-12-31'
+  
+  # Data quality thresholds
+  null_threshold: 0.05
+  duplicate_threshold: 0.01
+  
+  # Business rules
+  min_claim_amount: 0
+  max_claim_amount: 1000000
+  
+  # Feature flags
+  enable_tests: true
+  enable_docs: true
+
+# Test configurations
+tests:
+  +store_failures: true
+  +severity: warn
+
+# Query tag for tracking
+query-tag: "claims_pipeline"
+
+# Dispatch for cross-database compatibility
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: ['dbt_utils', 'dbt']

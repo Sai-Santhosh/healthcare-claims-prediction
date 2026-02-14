@@ -1,69 +1,56 @@
 """
-Helper Utilities Module
-Provides various utility functions for the project.
+Helper Utilities
+Common utility functions for the data engineering pipeline.
 """
 
 import os
 import time
-import functools
 import psutil
+import functools
+from typing import Dict, Any, Optional, Callable
 from datetime import datetime
-from typing import Callable, Any, Optional
-from pathlib import Path
+import logging
 
-from .logger import get_logger
-
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
 
 
 def timer(func: Callable) -> Callable:
     """
-    Decorator to measure and log function execution time.
+    Decorator to time function execution.
     
     Args:
         func: Function to wrap
-    
+        
     Returns:
-        Wrapped function with timing
+        Wrapped function
     """
     @functools.wraps(func)
-    def wrapper(*args, **kwargs) -> Any:
-        start_time = time.perf_counter()
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
         result = func(*args, **kwargs)
-        elapsed_time = time.perf_counter() - start_time
-        
-        # Format time appropriately
-        if elapsed_time < 60:
-            time_str = f"{elapsed_time:.2f} seconds"
-        elif elapsed_time < 3600:
-            minutes, seconds = divmod(elapsed_time, 60)
-            time_str = f"{int(minutes)}m {seconds:.2f}s"
-        else:
-            hours, remainder = divmod(elapsed_time, 3600)
-            minutes, seconds = divmod(remainder, 60)
-            time_str = f"{int(hours)}h {int(minutes)}m {seconds:.2f}s"
-        
-        logger.info(f"⏱️  {func.__name__} completed in {time_str}")
+        end_time = time.time()
+        duration = end_time - start_time
+        logger.debug(f"{func.__name__} executed in {duration:.4f} seconds")
         return result
-    
     return wrapper
 
 
-def memory_usage() -> dict:
+def memory_usage() -> Dict[str, str]:
     """
-    Get current memory usage statistics.
+    Get current memory usage.
     
     Returns:
-        Dictionary with memory statistics
+        Dictionary with memory metrics
     """
     process = psutil.Process(os.getpid())
     mem_info = process.memory_info()
     
     return {
-        'rss': format_bytes(mem_info.rss),
-        'vms': format_bytes(mem_info.vms),
-        'percent': f"{process.memory_percent():.2f}%",
-        'rss_bytes': mem_info.rss,
+        "rss": format_bytes(mem_info.rss),
+        "vms": format_bytes(mem_info.vms),
+        "rss_bytes": mem_info.rss,
+        "vms_bytes": mem_info.vms,
+        "percent": f"{process.memory_percent():.1f}%"
     }
 
 
@@ -72,8 +59,8 @@ def format_bytes(bytes_value: int) -> str:
     Format bytes to human-readable string.
     
     Args:
-        bytes_value: Size in bytes
-    
+        bytes_value: Number of bytes
+        
     Returns:
         Formatted string (e.g., "1.5 GB")
     """
@@ -84,102 +71,193 @@ def format_bytes(bytes_value: int) -> str:
     return f"{bytes_value:.2f} PB"
 
 
-def ensure_dir(path: str) -> Path:
+def ensure_dir(path: str) -> str:
     """
-    Ensure a directory exists, creating it if necessary.
+    Ensure directory exists, create if not.
     
     Args:
         path: Directory path
-    
+        
     Returns:
-        Path object
+        Path string
     """
-    dir_path = Path(path)
-    dir_path.mkdir(parents=True, exist_ok=True)
-    return dir_path
+    os.makedirs(path, exist_ok=True)
+    return path
+
+
+def get_file_size(path: str) -> Optional[int]:
+    """
+    Get file size in bytes.
+    
+    Args:
+        path: File path
+        
+    Returns:
+        Size in bytes or None if file doesn't exist
+    """
+    try:
+        return os.path.getsize(path)
+    except OSError:
+        return None
 
 
 def get_timestamp() -> str:
-    """Get current timestamp string for file naming."""
-    return datetime.now().strftime("%Y%m%d_%H%M%S")
-
-
-def safe_divide(numerator: float, denominator: float, default: float = 0.0) -> float:
     """
-    Safely divide two numbers, returning default if denominator is zero.
-    
-    Args:
-        numerator: The numerator
-        denominator: The denominator
-        default: Value to return if denominator is zero
+    Get current timestamp string.
     
     Returns:
-        Result of division or default value
+        Timestamp in format YYYYMMDD_HHMMSS
     """
-    if denominator == 0:
-        return default
-    return numerator / denominator
+    return datetime.now().strftime('%Y%m%d_%H%M%S')
 
 
 class ProgressTracker:
     """
-    Simple progress tracker for long-running operations.
+    Track progress of long-running operations.
     """
     
-    def __init__(self, total: int, description: str = "Processing", log_interval: int = 10):
+    def __init__(
+        self,
+        total: int,
+        description: str = "Processing",
+        log_every: int = 10
+    ):
         self.total = total
         self.description = description
-        self.log_interval = log_interval
+        self.log_every = log_every
         self.current = 0
-        self.start_time = time.perf_counter()
-        self.last_log_percent = 0
+        self.start_time = time.time()
     
     def update(self, n: int = 1) -> None:
         """Update progress by n items."""
         self.current += n
+        
         percent = (self.current / self.total) * 100
         
-        # Log at intervals
-        if percent - self.last_log_percent >= self.log_interval or self.current == self.total:
-            elapsed = time.perf_counter() - self.start_time
-            items_per_sec = self.current / elapsed if elapsed > 0 else 0
-            remaining = (self.total - self.current) / items_per_sec if items_per_sec > 0 else 0
+        if self.current % self.log_every == 0 or self.current == self.total:
+            elapsed = time.time() - self.start_time
+            rate = self.current / elapsed if elapsed > 0 else 0
+            eta = (self.total - self.current) / rate if rate > 0 else 0
             
             logger.info(
-                f"{self.description}: {percent:.1f}% "
-                f"({self.current:,}/{self.total:,}) "
-                f"- {items_per_sec:.0f} items/s "
-                f"- ETA: {remaining:.0f}s"
+                f"{self.description}: {self.current:,}/{self.total:,} "
+                f"({percent:.1f}%) - {rate:.1f}/s - ETA: {eta:.0f}s"
             )
-            self.last_log_percent = percent
     
-    def finish(self) -> None:
+    def finish(self) -> Dict[str, Any]:
         """Mark progress as complete."""
-        elapsed = time.perf_counter() - self.start_time
-        logger.info(
-            f"{self.description}: Complete! "
-            f"Processed {self.total:,} items in {elapsed:.2f}s"
-        )
+        elapsed = time.time() - self.start_time
+        return {
+            "total": self.total,
+            "processed": self.current,
+            "duration_seconds": elapsed,
+            "rate": self.current / elapsed if elapsed > 0 else 0
+        }
 
 
-def validate_dataframe(df, required_columns: list, df_name: str = "DataFrame") -> bool:
+class RetryHandler:
     """
-    Validate that a DataFrame has required columns.
+    Handle retries with exponential backoff.
+    """
+    
+    def __init__(
+        self,
+        max_retries: int = 3,
+        base_delay: float = 1.0,
+        max_delay: float = 60.0,
+        exponential_base: float = 2.0
+    ):
+        self.max_retries = max_retries
+        self.base_delay = base_delay
+        self.max_delay = max_delay
+        self.exponential_base = exponential_base
+    
+    def execute(self, func: Callable, *args, **kwargs) -> Any:
+        """
+        Execute function with retries.
+        
+        Args:
+            func: Function to execute
+            *args: Function arguments
+            **kwargs: Function keyword arguments
+            
+        Returns:
+            Function result
+            
+        Raises:
+            Last exception if all retries fail
+        """
+        last_exception = None
+        
+        for attempt in range(self.max_retries):
+            try:
+                return func(*args, **kwargs)
+            except Exception as e:
+                last_exception = e
+                
+                if attempt < self.max_retries - 1:
+                    delay = min(
+                        self.base_delay * (self.exponential_base ** attempt),
+                        self.max_delay
+                    )
+                    logger.warning(
+                        f"Attempt {attempt + 1} failed: {e}. "
+                        f"Retrying in {delay:.1f}s..."
+                    )
+                    time.sleep(delay)
+        
+        raise last_exception
+
+
+def chunk_list(lst: list, chunk_size: int):
+    """
+    Split list into chunks.
     
     Args:
-        df: pandas DataFrame to validate
-        required_columns: List of required column names
-        df_name: Name for error messages
-    
-    Returns:
-        True if valid
-    
-    Raises:
-        ValueError: If required columns are missing
+        lst: List to split
+        chunk_size: Size of each chunk
+        
+    Yields:
+        List chunks
     """
-    missing = set(required_columns) - set(df.columns)
-    if missing:
-        raise ValueError(
-            f"{df_name} is missing required columns: {missing}"
-        )
-    return True
+    for i in range(0, len(lst), chunk_size):
+        yield lst[i:i + chunk_size]
+
+
+def flatten_dict(d: Dict, parent_key: str = '', sep: str = '_') -> Dict:
+    """
+    Flatten nested dictionary.
+    
+    Args:
+        d: Dictionary to flatten
+        parent_key: Parent key prefix
+        sep: Separator between keys
+        
+    Returns:
+        Flattened dictionary
+    """
+    items = []
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, dict):
+            items.extend(flatten_dict(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
+
+def safe_divide(numerator: float, denominator: float, default: float = 0.0) -> float:
+    """
+    Safely divide two numbers.
+    
+    Args:
+        numerator: Numerator
+        denominator: Denominator
+        default: Default value if denominator is zero
+        
+    Returns:
+        Division result or default
+    """
+    if denominator == 0:
+        return default
+    return numerator / denominator

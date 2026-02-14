@@ -1,0 +1,72 @@
+# =============================================================================
+# Staging Layer Schema Definitions
+# =============================================================================
+
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw data loaded from S3/files"
+    database: "{{ env_var('DBT_DATABASE', 'claims_warehouse') }}"
+    schema: raw
+    
+    tables:
+      - name: claims_raw
+        description: "Raw medical claims data from 2016"
+        columns:
+          - name: claim_id_key
+            description: "Unique identifier for the claim"
+            tests:
+              - not_null
+              
+          - name: amt_billed
+            description: "Amount billed by provider"
+            
+          - name: amt_paid
+            description: "Amount paid for the claim"
+
+      - name: ref_icd_codes
+        description: "ICD diagnosis code reference table"
+        
+      - name: ref_cpt_codes
+        description: "CPT procedure code reference table"
+        
+      - name: ref_providers
+        description: "Provider reference table"
+
+models:
+  - name: stg_claims
+    description: "Staged and cleaned claims data"
+    columns:
+      - name: claim_id_key
+        description: "Unique claim identifier"
+        tests:
+          - not_null
+          - unique
+          
+      - name: amt_billed
+        description: "Billed amount (cleaned, non-negative)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              
+      - name: amt_paid
+        description: "Paid amount (cleaned, non-negative)"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              
+      - name: gender_code
+        description: "Patient gender (M/F)"
+        tests:
+          - accepted_values:
+              values: ['M', 'F']
+              
+      - name: age
+        description: "Patient age at time of service"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 120

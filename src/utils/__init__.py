@@ -1,5 +1,13 @@
-# Utilities module
-from .logger import get_logger, setup_logging
-from .helpers import timer, memory_usage, format_bytes
+# Utils Module
+from .logger import setup_logging, get_logger, PipelineLogger
+from .helpers import timer, memory_usage, ensure_dir, ProgressTracker
 
-__all__ = ['get_logger', 'setup_logging', 'timer', 'memory_usage', 'format_bytes']
+__all__ = [
+    'setup_logging',
+    'get_logger',
+    'PipelineLogger',
+    'timer',
+    'memory_usage',
+    'ensure_dir',
+    'ProgressTracker'
+]

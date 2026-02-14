@@ -1,0 +1,174 @@
+# =============================================================================
+# Docker Compose for Local Development
+# Medical Claims Data Engineering Pipeline
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # ---------------------------------------------------------------------------
+  # ETL Pipeline Service
+  # ---------------------------------------------------------------------------
+  pipeline:
+    build:
+      context: .
+      target: development
+    container_name: claims-pipeline
+    volumes:
+      - ./src:/app/src
+      - ./config:/app/config
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./dbt:/app/dbt
+    environment:
+      - ENVIRONMENT=development
+      - AWS_REGION=us-east-1
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/claims_warehouse
+      - PYTHONPATH=/app
+    depends_on:
+      - postgres
+      - localstack
+    networks:
+      - claims-network
+    command: ["python", "-m", "src.etl.run_pipeline"]
+
+  # ---------------------------------------------------------------------------
+  # PostgreSQL Database (Data Warehouse)
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:15-alpine
+    container_name: claims-postgres
+    environment:
+      POSTGRES_DB: claims_warehouse
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - claims-network
+
+  # ---------------------------------------------------------------------------
+  # LocalStack (AWS Services Emulation)
+  # ---------------------------------------------------------------------------
+  localstack:
+    image: localstack/localstack:latest
+    container_name: claims-localstack
+    ports:
+      - "4566:4566"
+      - "4510-4559:4510-4559"
+    environment:
+      - SERVICES=s3,lambda,sns,cloudwatch,glue
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+      - LAMBDA_EXECUTOR=local
+      - AWS_DEFAULT_REGION=us-east-1
+    volumes:
+      - localstack-data:/tmp/localstack
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - claims-network
+
+  # ---------------------------------------------------------------------------
+  # DBT Service
+  # ---------------------------------------------------------------------------
+  dbt:
+    build:
+      context: .
+      target: development
+    container_name: claims-dbt
+    volumes:
+      - ./dbt:/app/dbt
+      - ./src:/app/src
+    environment:
+      - DBT_PROFILES_DIR=/app/dbt/profiles
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/claims_warehouse
+    depends_on:
+      - postgres
+    working_dir: /app/dbt
+    networks:
+      - claims-network
+    command: ["dbt", "run"]
+
+  # ---------------------------------------------------------------------------
+  # Jupyter Notebook (for development/analysis)
+  # ---------------------------------------------------------------------------
+  jupyter:
+    build:
+      context: .
+      target: development
+    container_name: claims-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./src:/app/src
+      - ./data:/app/data
+      - ./config:/app/config
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/claims_warehouse
+    depends_on:
+      - postgres
+    networks:
+      - claims-network
+    command: ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root"]
+
+  # ---------------------------------------------------------------------------
+  # pgAdmin (Database UI)
+  # ---------------------------------------------------------------------------
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: claims-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+    networks:
+      - claims-network
+
+  # ---------------------------------------------------------------------------
+  # Test Runner
+  # ---------------------------------------------------------------------------
+  test:
+    build:
+      context: .
+      target: development
+    container_name: claims-test
+    volumes:
+      - ./src:/app/src
+      - ./tests:/app/tests
+      - ./config:/app/config
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/claims_warehouse
+    depends_on:
+      - postgres
+    networks:
+      - claims-network
+    command: ["pytest", "tests/", "-v", "--cov=src", "--cov-report=html"]
+
+# -----------------------------------------------------------------------------
+# Networks
+# -----------------------------------------------------------------------------
+networks:
+  claims-network:
+    driver: bridge
+
+# -----------------------------------------------------------------------------
+# Volumes
+# -----------------------------------------------------------------------------
+volumes:
+  postgres-data:
+  localstack-data:
